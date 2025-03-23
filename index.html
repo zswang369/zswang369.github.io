@@ -1,0 +1,1267 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+
+/* 
+ *     Typora Theme - Lapis    /    Author - YiNN 
+ *     https://github.com/YiNNx/typora-theme-lapis
+ */
+
+:root {
+    --text-color: #40464f;
+    /* Text */
+    --primary-color: #4870ac;
+    /* Primary Color */
+    --bg-color: #ffffff;
+    --side-bar-bg-color: var(--bg-color);
+    /* Background */
+
+    --marker-color: #a2b6d4;
+    /* List Marker */
+    --source-color: #a8a8a9;
+    /* for comment / link source */
+    --highlight-color: #ffffb5c2;
+    /* Highlight */
+    --header-span-color: var(--primary-color);
+    /* h2 Span Color */
+    --block-bg-color: #f6f8fa;
+    /* Block Background */
+    --img-shadow-color: #e3e8f0;
+
+    /* Overwrite of Typora Base Color */
+    --search-hit-bg-color: var(--select-text-bg-color);
+    --search-select-bg-color: #5bb3ff;
+    --control-text-hover-color: #a2b6d4;
+    --rawblock-edit-panel-bd: var(--block-bg-color);
+    --item-hover-bg-color: rgb(246 248 250);
+    --active-file-bg-color: var(--block-bg-color);
+}
+
+@media print {
+    :root {
+        --text-color: rgb(0, 0, 0);
+    }
+
+    .typora-export {
+        margin: 2mm 6mm 0 6mm;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: transparent !important;
+    }
+}
+
+/*
+ * Font-face for Cantarell, Source Han Serif CN and JetBrains Mono
+ */
+
+/*
+ * Basic Style
+ */
+
+#write {
+    max-width: 950px;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    line-height: 1.6;
+    word-spacing: 0px;
+    letter-spacing: 0px;
+    word-break: break-word;
+    word-wrap: break-word;
+    text-align: justify;
+
+    font-family: 'Cantarell', 'SourceHanSerifCN', 'JetBrainsMono';
+    margin-bottom: 20rem;
+}
+
+.searchpanel-search-option-btn {
+    position: absolute;
+    width: 24px;
+    height: 16px;
+    right: 5px;
+    top: 5px;
+    z-index: 99;
+    cursor: pointer;
+    margin-top: 1px;
+    padding: 1px;
+    border-radius: 3px;
+    line-height: 10px;
+    border: 1px solid #ddd;
+    border-color: var(--active-toggle-btn-color);
+}
+
+/* Strong */
+
+#write strong {
+    color: var(--primary-color);
+}
+
+/* Link */
+
+#write a {
+    color: var(--primary-color);
+    /* font-family: "Cantarell"; */
+}
+
+#write .md-p a,
+#write .md-heading a,
+[md-inline=url],
+[md-inline=link]>.md-content {
+    word-wrap: break-word;
+    text-decoration: underline solid;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+}
+
+#write h2.md-heading a {
+    text-decoration: underline;
+    border-bottom: 0;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1.2px;
+}
+
+.md-meta,
+[md-inline=link]>.md-content,
+[md-inline=image]>.md-meta,
+.md-image>.md-meta {
+    word-break: break-all;
+    font-weight: normal;
+    color: var(--source-color);
+    font-family: "JetBrainsMono";
+    font-size: 90%;
+}
+
+
+/* 
+ * TOC
+ */
+
+.md-toc-content {
+    font-family: 'SourceHanSerifCN';
+}
+
+.md-toc-content:empty:before {
+    color: var(--primary-color);
+}
+
+#write div.md-toc-tooltip {
+    font-family: 'SourceHanSerifCN';
+    color: var(--primary-color);
+    position: static;
+    margin-top: 10px;
+    background-color: var(--block-bg-color);
+    line-height: 1.6rem;
+    padding: 0.3rem 0.75rem;
+    border-top: none;
+    /* border-left: 2px solid var(--primary-color);
+     */
+    border-radius: .5rem;
+}
+
+.md-toc:focus .md-toc-content {
+    border-color: var(--bg-color);
+    margin: 9px -1px;
+    margin-top: 9px;
+}
+
+.md-toc .md-toc-content {
+    border-color: var(--bg-color);
+    margin: 10px 0px;
+    margin-top: 10px;
+}
+
+
+/* mark */
+
+mark {
+    background: var(--highlight-color);
+    padding: 1px .15rem;
+    border-radius: 1px;
+    color: inherit;
+}
+
+/* 
+ * Paragraph
+ */
+
+#write+p,
+#write blockquote p {
+    font-size: 1.1rem;
+    padding-top: .2rem;
+    padding-bottom: .2rem;
+    margin: 0;
+    line-height: 1.8rem;
+    color: var(--text-color);
+}
+
+/*
+ * Header
+ */
+
+#write h4,
+#write h5,
+#write h6 {
+    font-weight: normal;
+}
+
+#write h1,
+#write h2,
+#write h3,
+#write h4,
+#write h5,
+#write h6 {
+    font-family: 'SourceHanSerifCN';
+    padding: 0px;
+    color: var(--primary-color);
+}
+
+#write h1 {
+    text-align: center;
+}
+
+#write h2 {
+    padding: 1px 12.5px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+#write h2,
+#write h2 code {
+    background-color: var(--header-span-color);
+}
+
+#write h2,
+#write h2 a,
+#write h2 code,
+#write h2 strong,
+#write h2 script {
+    color: var(--bg-color);
+}
+
+#write h2 a {
+    border-bottom-color: var(--bg-color) !important;
+}
+
+#write h1 {
+    font-size: 2rem;
+}
+
+#write h2 {
+    font-size: 1.5rem;
+}
+
+#write h3 {
+    font-size: 1.4rem;
+}
+
+#write h4 {
+    font-size: 1.2rem;
+}
+
+#write h5 {
+    font-size: 1.1rem;
+}
+
+#write h6 {
+    font-size: 1.1rem;
+}
+
+#write h1 {
+    padding-top: 0.9rem;
+    margin-bottom: 2.3rem;
+}
+
+#write h2 {
+    margin: .3em 0;
+}
+
+#write h3 {
+    margin: 1em 0 1em;
+}
+
+#write h4 {
+    margin: 0.8em 0 0.8em;
+}
+
+#write h5 {
+    margin: 0.6em 0 0.6em;
+}
+
+#write h6 {
+    margin: 0.4em 0 0.4em;
+}
+
+blockquote h3.md-focus:before,
+blockquote h4.md-focus:before,
+blockquote h5.md-focus:before,
+blockquote h6.md-focus:before {
+    left: -1.3rem;
+}
+
+/*
+ * List
+ */
+
+::marker {
+    font-weight: bold;
+    color: var(--marker-color);
+}
+
+li.md-list-item {
+    margin: 0.4rem 0;
+}
+
+#write ul,
+#write ol {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding-left: 20px;
+}
+
+#write ul {
+    list-style-type: disc;
+}
+
+#write em {
+    padding: 0 3px 0 0;
+}
+
+#write ul ul {
+    list-style-type: square;
+}
+
+#write ol {
+    list-style-type: decimal;
+}
+
+#write li section {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    line-height: 1.7rem;
+    text-align: justify;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+/*
+ * Quote
+ */
+
+#write blockquote {
+    display: block;
+    font-size: .9em;
+    overflow: auto;
+    border-left: 3px solid var(--primary-color);
+    padding: 15px 30px 15px 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background: var(--block-bg-color);
+}
+
+.md-alert {
+    display: block;
+    overflow: auto;
+    border-left: 3px solid var(--primary-color);
+    padding: 15px 30px 15px 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background: var(--block-bg-color);
+}
+
+.md-alert-text-container {
+    font-size: 1.2em;
+}
+
+.md-end-block.md-p {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    padding-block-start: 2.8px;
+    padding-block-end: 2.8px;
+}
+
+.md-alert-text-important {
+    color: #614f9c;
+}
+
+.md-alert.md-alert-important {
+    background-color: #614f9c0a;
+    border-left-color: #614f9c;
+}
+
+.md-alert-text-note {
+    color: #527da8;
+}
+
+.md-alert.md-alert-note {
+    background-color: #527da80a;
+    border-left-color: #527da8;
+}
+
+.md-alert-text-tip {
+    color: #428485;
+}
+
+.md-alert.md-alert-tip {
+    background-color: #4284850a;
+    border-left-color: #428485;
+}
+
+.md-alert-text-warning {
+    color: #a88652;
+}
+
+.md-alert.md-alert-warning {
+    background-color: #9b80490a;
+    border-left-color: #a88652;
+}
+
+
+.md-alert-text-caution {
+    color: #a34f55;
+}
+
+.md-alert.md-alert-caution {
+    background-color: #a34f550a;
+    border-left-color: #a34f55;
+}
+
+
+/*
+ * Inline code
+ */
+
+#write code {
+    color: var(--primary-color);
+    font-size: 94%;
+    font-weight: normal;
+    word-wrap: break-word;
+    padding: 2px 4px 2px;
+    border-radius: 3px;
+    margin: 2px;
+    background-color: var(--block-bg-color);
+    font-family: 'JetBrainsMono';
+    word-break: break-all;
+}
+
+/*
+ * Img
+ */
+
+#write img {
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+#write p>.md-image:only-child:not(.md-img-error) img,
+#write p>img:only-child {
+    filter: drop-shadow(var(--img-shadow-color) 0px 6px 6px);
+    display: block;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/*
+ * Table
+ */
+#write table {
+    display: table;
+    text-align: justify;
+    overflow-x: auto;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    font-size: 1em;
+    margin: 0px 0px 20px;
+    width: 100%;
+}
+
+#write tbody {
+    border: 0;
+}
+
+#write table tr {
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+
+#write table tr th,
+#write table tr td {
+    font-size: 1rem;
+    border: 1px solid #d9dfe4;
+    padding: 5px 10px;
+    text-align: justify;
+}
+
+#write table tr th {
+    font-family: SourceHanSerifCN;
+    text-align: center;
+    min-width: 10rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+#write table tr td:hover,
+#write table tr th:hover {
+    background-color: var(--block-bg-color);
+}
+
+table td {
+    min-width: 32px;
+}
+
+.md-table-resize-popover {
+    width: auto !important;
+}
+
+/* Footnote */
+
+sup.md-footnote {
+    background-color: var(--block-bg-color);
+    color: var(--primary-color);
+}
+
+.md-def-name {
+    color: var(--primary-color);
+}
+
+/*
+ * Math Script 
+ */
+
+.md-inline-math script {
+    color: var(--primary-color);
+}
+
+.md-rawblock-control:not(.md-rawblock-tooltip) {
+    background: var(--bg-color);
+    color: var(--md-char-color);
+}
+
+
+.code-tooltip {
+    box-shadow: none;
+}
+
+.md-rawblock-tooltip.md-rawblock-control {
+    border-radius: 1rem;
+}
+
+.md-rawblock .md-rawblock-tooltip {
+    inset: auto 0.3rem auto auto;
+    transform: translateY(-120%);
+}
+
+/* 
+ * Comment
+ */
+.md-comment {
+    color: var(--source-color);
+    opacity: 1;
+    font-family: 'JetBrainsMono';
+}
+
+/*
+ * Dividing line
+ */
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 2px solid #eef2f5;
+    border-radius: 2px;
+}
+
+/* Checkbox */
+
+#write input[type=checkbox] {
+    width: 0;
+}
+
+.task-list-item input::before {
+    content: "";
+    display: inline-block;
+    width: 1.0125rem;
+    height: 1.0125rem;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid var(--marker-color);
+    border-radius: 1.2rem;
+    background-color: #fdfdfd;
+    margin-left: -0.1rem;
+    margin-right: 0.1rem;
+    margin-top: -.6rem;
+}
+
+.task-list-item input:checked::before {
+    content: '✓';
+    font-weight: bold;
+    -webkit-text-stroke: 1px var(--primary-color);
+    color: var(--primary-color);
+    background-color: var(--bg-color);
+    font-size: 0.75rem;
+    line-height: 0.8rem;
+}
+
+blockquote .task-list-item input::before {
+    margin-top: .2rem;
+}
+
+/*
+ * Sidebar
+ */
+#typora-sidebar {
+    font-family: 'Cantarell', 'SourceHanSerifCN';
+    height: 100%;
+    color: var(--text-color);
+    font-size: 0.92rem;
+    background-color: var(--bg-color);
+}
+
+#sidebar-content.sidebar-content {
+    margin-top: .5rem;
+}
+
+.html-for-mac #write input[type=checkbox] {
+    margin-top: 0.65rem;
+}
+
+.html-for-mac #write .task-list-item input::before {
+    margin-top: -.85rem;
+}
+
+
+/*
+ * Sidebar - FileNode
+ */
+
+.active-tab-files #info-panel-tab-file .info-panel-tab-border,
+.active-tab-outline #info-panel-tab-outline .info-panel-tab-border,
+.ty-show-search #info-panel-tab-search .info-panel-tab-border {
+    border-radius: 10px;
+    height: 1px;
+    background-color: var(--primary-color);
+}
+
+.file-node-content {
+    color: var(--primary-color);
+    line-height: 1.6rem;
+}
+
+span.file-node-title-name-part {
+    color: var(--text-color);
+}
+
+span.file-node-title-ext-part {
+    color: var(--text-color);
+}
+
+.file-node-icon {
+    padding-right: 0.2rem;
+}
+
+.file-tree-node.active>.file-node-background {
+    border-left: 4px solid var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/*
+ * Sidebar - Outline
+ */
+
+#outline-content {
+    height: 100%;
+    overflow-x: hidden;
+    line-height: 1.6rem;
+    font-size: .96rem;
+}
+
+#outline-content .outline-active,
+.pin-outline .outline-active {
+    color: var(--primary-color);
+}
+
+.outline-item {
+    padding-left: 2em;
+}
+
+.outline-item>.outline-expander:before {
+    transform: translateY(-1px) !important;
+}
+
+/* Meta Block */
+
+pre.md-meta-block {
+    font-family: 'JetBrainsMono';
+    color: var(--primary-color);
+    background: #f6f8fa;
+    padding: 1.5rem;
+    margin: -37px 0rem 3.8rem;
+    /* border-radius: 1rem; */
+    filter: drop-shadow(var(--img-shadow-color) 0px 3px 3px);
+    /* border-top: 1px solid var(--primary-color); */
+    /* border-bottom: 1px solid var(--primary-color); */
+}
+
+pre.md-fences-advanced.md-focus .md-fences-adv-panel {
+    border-radius: .8rem;
+}
+
+/*
+ * Scrollbar
+ */
+
+#outline-content::-webkit-scrollbar {
+    width: .5rem;
+}
+
+#file-library::-webkit-scrollbar {
+    width: .5rem;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgba(179, 179, 179, 0.425);
+}
+
+::-webkit-scrollbar {
+    width: 1rem;
+}
+
+/* 
+ * Code Block - Style
+ */
+
+.md-fences:before {
+    content: ' ';
+    display: block;
+    width: 100%;
+    background-size: 40px;
+    background-repeat: no-repeat;
+    /* background-color: #282c34; */
+    margin-bottom: -7px;
+    border-radius: 5px;
+    background-position: 10px 10px;
+}
+
+.CodeMirror-wrap .CodeMirror-scroll {
+    overflow-x: auto;
+}
+
+.md-fences .cm-s-inner.CodeMirror {
+    margin: 1.5rem 0;
+}
+
+.cm-s-inner.CodeMirror {
+    padding: 1.2rem .8rem;
+    color: #4f5467;
+    font-family: 'JetBrainsMono';
+    border-radius: 10px;
+    background-color: var(--block-bg-color);
+    /* border: 1px solid #eef2f5;*/
+    line-height: 1.6rem;
+}
+
+.CodeMirror-gutters {
+    border-right: 1px solid #a2b6d452;
+    background: inherit;
+    white-space: nowrap;
+}
+
+pre.CodeMirror-line {
+    padding: 0 1.2rem;
+}
+
+.CodeMirror-linenumber {
+    white-space: nowrap;
+    padding: 0 3px 0 5px;
+    text-align: right;
+    color: var(--primary-color);
+}
+
+/* 
+ * Code Block - Color Scheme
+ */
+
+.cm-s-inner .cm-keyword {
+    color: #1694b6 !important;
+}
+
+.cm-s-inner .cm-operator {
+    color: #2f86d2 !important;
+}
+
+.cm-s-inner .cm-variable,
+.cm-s-inner .cm-builtin,
+.cm-s-inner .cm-header,
+.cm-s-inner .cm-tag,
+.cm-s-inner .cm-property,
+.cm-s-inner .cm-quote {
+    color: #b9218e !important;
+}
+
+.cm-s-inner .cm-variable-2 {
+    color: #7aadad !important;
+}
+
+.cm-s-inner .cm-variable-3,
+.cm-s-inner .cm-type,
+.cm-s-inner .cm-atom {
+    color: #378ed8 !important;
+}
+
+.cm-s-inner .cm-number {
+    color: #1a5494 !important;
+}
+
+.cm-s-inner .cm-def,
+.cm-s-inner .cm-qualifier {
+    color: #0744ac !important;
+}
+
+.cm-s-inner .cm-string {
+    color: #6f42c2 !important;
+}
+
+.cm-s-inner .cm-string-2 {
+    color: #27638f !important;
+}
+
+.cm-s-inner .cm-comment {
+    color: #9a9a9a !important;
+}
+
+.cm-s-inner .cm-meta {
+    color: #0b93be !important;
+}
+
+.cm-s-inner .cm-attribute {
+    color: #8f6aa8 !important;
+}
+
+.cm-s-inner .cm-error {
+    color: rgba(255, 255, 255, 1) !important;
+    background-color: #b9218e40 !important;
+}
+
+.cm-s-inner .CodeMirror-matchingbracket {
+    text-decoration: underline;
+    color: white !important;
+}
+
+.CodeMirror div.CodeMirror-cursor {
+    border-left: 1px solid var(--primary-color);
+    z-index: 3;
+}
+
+.cm-s-inner div.CodeMirror-selected {
+    background: rgba(167, 178, 189, 0.2) !important;
+}
+
+.cm-s-inner.CodeMirror-focused div.CodeMirror-selected {
+    background: rgba(167, 178, 189, 0.2) !important;
+}
+
+.cm-s-inner .CodeMirror-selected,
+.cm-s-inner .CodeMirror-selectedtext {
+    background-color: rgba(167, 178, 189, 0.0) !important;
+}
+
+.cm-s-inner .CodeMirror-line::-moz-selection,
+.cm-s-inner .CodeMirror-line>span::-moz-selection,
+.cm-s-inner .CodeMirror-line>span>span::-moz-selection {
+    background-color: rgba(167, 178, 189, 0.2);
+}
+
+.cm-s-inner .CodeMirror-line::selection,
+.cm-s-inner .CodeMirror-line>span::selection,
+.cm-s-inner .CodeMirror-line>span>span::selection {
+    background-color: rgba(167, 178, 189, 0.2);
+}
+
+.md-rawblock .md-rawblock-tooltip {
+    inset: auto 0.3rem auto auto;
+    transform: translateY(-120%);
+}
+
+/*
+ * Sitting - Unibody
+ */
+
+.megamenu-menu-header {
+    border: none;
+    color: var(--text-color);
+}
+
+.megamenu-menu-header #megamenu-back-btn,
+.megamenu-menu-header .megamenu-menu-header-title-back,
+.megamenu-menu-header .megamenu-menu-header-title-menu {
+    color: var(--text-color);
+}
+
+.megamenu-menu {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    box-shadow: none !important;
+}
+
+header,
+#megamenu-content {
+    background-color: var(--bg-color);
+    background-image: none !important;
+}
+
+.md-search-hit {
+    background-color: var(--search-hit-bg-color);
+}
+
+#recent-file-panel tbody tr:nth-child(2n-1) {
+    background-color: var(--recent-file-panel-n-bg-color);
+    color: var(--recent-file-panel-n-color);
+}
+
+.export-detail,
+.export-item.active,
+.export-items-list-control {
+    width: 75%;
+}
+
+
+</style><title>迷流文献总结web</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n492"><a class="md-toc-inner" href="#迷流相关文献总览">迷流相关文献总览</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n494"><a class="md-toc-inner" href="#研究方向分类">研究方向分类</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n512"><a class="md-toc-inner" href="#城市轨道交通背景与治理措施必要性">城市轨道交通背景与治理措施必要性</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n571"><a class="md-toc-inner" href="#杂散电流的传统治理措施">杂散电流的传统治理措施</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n593"><a class="md-toc-inner" href="#杂散电流的电力电子治理措施">杂散电流的电力电子治理措施</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n606"><a class="md-toc-inner" href="#动模系统论文整理">动模系统论文整理</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n640"><a class="md-toc-inner" href="#综述">综述</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n647"><a class="md-toc-inner" href="#轨道交通的背景">轨道交通的背景</a></span></p></div><hr /><h1 id='迷流相关文献总览'><span>迷流相关文献总览</span></h1><p><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL9wABsV&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[1]Wang Miao, Yang Xiaofeng, Ni Menghan, at al. Dynamic Performance Analysis, Optimization, and Verification of DC Auto-Transformer System with Rail Potential and Stray Current Emulator[J]. IEEE Transactions on Transportation Electrification, 2022, 8(1): 480-91.</span></a>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL9wAEsQ&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[2]Yang Xiaofeng, Wang Miao, Zheng Trillion Q., at al. Modelling and Simulation of Stray Current in Urban Rail Transit—A Review[J]. Urban Rail Transit, 2024, 10(3): 189-99.</span></a><span> </span>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL%2bgAAsZ&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[3]兰慧峰,孙建军,李国玉,等. 城市轨道交通钢轨电位限制装置操作过电压抑制研究[J]. 都市快轨交通, 2025, 38: 149-56.</span></a><span> </span>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL%2bQAEse&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[4]Bhagat Sahil, 杨晓峰, 王淼, at al. 城市轨道交通杂散电流治理的综述与评估（英文）[J]. 电工技术学报, 2021, 36(23): 4851-63.</span></a><span> </span>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL%2bQACsY&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[5]宁晓雁,高国强,尹彩琴,等. 地铁引起的变压器偏磁电流特征分析[J]. 都市快轨交通, 2023, 36: 125-31.</span></a><span> </span>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL-gACsf&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[6]王文博,李文恒. 电网拓扑结构对地铁杂散电流分布特性研究[J]. 都市快轨交通, 2023, 36: 110-116.</span></a><span> </span>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL%2bQAAsa&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[7]夏雪,杨晓峰,陈茂鲁,等. 动态杂散电流的时频特征及腐蚀行为研究[J]. 都市快轨交通, 2023, 36: 117-124.</span></a><span> </span>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL-gABsc&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[8]孙建军,邢春阳,兰慧峰,等. 接触轨供电制式下专用轨回流方案研究[J]. 都市快轨交通, 2025, 38: 142-148+156.</span></a><span> </span>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcMAAADsn&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[9]夏雪,杨晓峰,陈茂鲁,等. 零阻变换器系统中开关单元的优化分布方法[J]. 都市快轨交通, 2022, 35: 1-7+16.</span></a><span> </span>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL9wAFsR&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[10]Zhu Chengqian, Du Guifu, Ding Yawen, at al. Rail potential control with train diagram optimization in multitrain DC traction power system[J]. International Journal of Rail Transportation, 2022, 10(4): 476-496.</span></a><span>（多列车直流牵引供电系统中列车运行图优化与轨道电位控制）</span>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL9wADsX&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[11]Szymenderski Jan, Machczyński Wojciech,Budnik Krzysztof. Modeling Effects of Stochastic Stray Currents from D.C. Traction on Corrosion Hazard of Buried Pipelines[J]. Energies, 2019, 12(23): 4570.</span></a><span>（直流牵引系统随机杂散电流对埋地管道腐蚀风险影响建模）</span>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL9wACsW&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[12]Wang Aimin, Lin Sheng, Hu Ziheng, at al. Evaluation Model of DC Current Distribution in AC Power Systems Caused by Stray Current of DC Metro Systems[J]. IEEE Transactions on Power Delivery, 2021, 36(1): 114-123.</span></a><span>（直流地铁系统杂散电流引起的交流电力系统直流电流分布评估模型）</span>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcMAAABsl&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[13]罗远国,刘君,毛钧毅,等. 轨地过渡电阻对电网地铁杂散电流分布影响分析[J]. 电网与清洁能源, 2021, 37: 32-40+46.</span></a>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcMAAAAsk&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[14]彭平,曾祥君,倪砚茹,等. 考虑地铁杂散电流影响的变压器直流偏磁电流建模方法[J]. 电力科学与技术学报, 2021, 36: 192-198.</span></a>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL%2bgACsb&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[15]顾靖达,杨晓峰,郑琼林,等. 基于不同接地方式与列车工况的负阻变换器牵引供电系统轨道电位与杂散电流[J]. 电工技术学报, 2021, 36: 1703-1717.</span></a><span> </span>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcMAAAEsg&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[16]陈茂鲁,杨晓峰,郑琼林,等. 零阻变换器系统中晶闸管开关单元的关断策略[J]. 都市快轨交通, 2022, 35: 25-33.</span></a><span> </span>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcMAAACsm&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[17]王慧康,杨晓峰,倪梦涵,等. 轨道电位与杂散电流动模实验平台[J]. 电工技术学报, 2020, 35: 3609-3618.</span></a><span> </span>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL-gADse&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[18]杨晓峰,王慧康,郑琼林. 直流牵引供电系统中有限边界边缘效应对轨道电位的影响[J]. 北京交通大学学报, 2020, 44: 1-11.</span></a><span> </span>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL-QABsf&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[19]杨晓峰,薛皓,郑琼林. 基于双向可变电阻模块的杂散电流与轨道电位动态模拟系统[J]. 电工技术学报, 2019, 34: 2793-2805.</span></a><span> </span>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL%2bAABsa&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[20]徐杰,杨晓峰,王慧康,等. 一种多区段地铁轨道电位动态模拟系统[J]. 北京交通大学学报, 2020, 44: 57-65.</span></a><span> </span>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL-gAEsZ&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[21]王双慧,杨晓峰,王慧康,等. 考虑列车运行工况的钢轨电位硬件动态模拟平台[J]. 都市快轨交通, 2022, 35: 8-16.</span></a><span> </span>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL%2bQABsb&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[22]周奇,林圣,邹全德,等. 土壤结构对城轨中杂散电流分布的影响分析[J]. 都市快轨交通, 2022, 35: 10-16.</span></a><span> </span>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL-gAAsd&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[23]刘炜,郑杰,李田,等. 排流装置对直流牵引供电系统杂散电流分布的影响[J]. 电工技术学报, 2022, 37: 4565-4574.</span></a><span> </span>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL%2bgABsY&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[24]王爱民,林圣,李俊逸,等. 城市轨道交通长线路杂散电流仿真模型[J]. 高电压技术, 2020, 46: 1379-1386.</span></a>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL%2bQADsZ&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[25]史云涛,赵丽平,林圣,等. 城市电网中地铁杂散电流分布规律及影响因素分析[J]. 电网技术, 2021, 45: 1951-1957.</span></a><span> </span>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcLVQABs3&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[26]Ibrahem Amr, Elrayyah Ali, Sozer Yilmaz, at al. DC Railway System Emulator for Stray Current and Touch Voltage Prediction[J]. IEEE Transactions on Industry Applications, 2017, 53(1): 439-446.</span></a><span> </span>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL%2bQAFsf&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[27]王淼,杨晓峰,李世翔,等. 城市轨道交通直流自耦变压器牵引供电系统故障保护研究[J]. 电工技术学报, 2022, 37: 976-989.</span></a><span> </span>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL%2bAAAsb&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[28]Rahman Farah Asyikin Abd, Kadir Mohd Zainal Abidin Ab, Osman Miszaina, at al. Review of the AC Overhead Wires, the DC Third Rail and the DC Fourth Rail Transit Lines: Issues and Challenges[J]. IEEE Access, 2020, 8: 213277-213295.</span></a><span> </span></p><h2 id='研究方向分类'><span>研究方向分类</span></h2><p><span>牵引供电系统建模：</span></p><p><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL%2bgABsY&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[24]王爱民,林圣,李俊逸,等. 城市轨道交通长线路杂散电流仿真模型[J]. 高电压技术, 2020, 46: 1379-1386.</span></a><span> </span></p><p><span>轨道电位与杂散电流的危害分析：</span></p><ul><li><p><span>腐蚀：</span>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL%2bQAAsa&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[7]夏雪,杨晓峰,陈茂鲁,等. 动态杂散电流的时频特征及腐蚀行为研究[J]. 都市快轨交通, 2023, 36: 117-124.</span></a><span> </span>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL9wADsX&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[11]Szymenderski Jan, Machczyński Wojciech,Budnik Krzysztof. Modeling Effects of Stochastic Stray Currents from D.C. Traction on Corrosion Hazard of Buried Pipelines[J]. Energies, 2019, 12(23): 4570.</span></a><span>（直流牵引系统随机杂散电流对埋地管道腐蚀风险影响建模）</span></p></li><li><p><span>电网：</span>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL%2bQACsY&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[5]宁晓雁,高国强,尹彩琴,等. 地铁引起的变压器偏磁电流特征分析[J]. 都市快轨交通, 2023, 36: 125-31.</span></a><span> </span>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL-gACsf&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[6]王文博,李文恒. 电网拓扑结构对地铁杂散电流分布特性研究[J]. 都市快轨交通, 2023, 36: 110-116.</span></a><span> </span>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL9wACsW&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[12]Wang Aimin, Lin Sheng, Hu Ziheng, at al. Evaluation Model of DC Current Distribution in AC Power Systems Caused by Stray Current of DC Metro Systems[J]. IEEE Transactions on Power Delivery, 2021, 36(1): 114-123.</span></a><span>（直流地铁系统杂散电流引起的交流电力系统直流电流分布评估模型）</span>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcMAAABsl&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[13]罗远国,刘君,毛钧毅,等. 轨地过渡电阻对电网地铁杂散电流分布影响分析[J]. 电网与清洁能源, 2021, 37: 32-40+46.</span></a>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcMAAAAsk&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[14]彭平,曾祥君,倪砚茹,等. 考虑地铁杂散电流影响的变压器直流偏磁电流建模方法[J]. 电力科学与技术学报, 2021, 36: 192-198.</span></a>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL%2bQADsZ&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[25]史云涛,赵丽平,林圣,等. 城市电网中地铁杂散电流分布规律及影响因素分析[J]. 电网技术, 2021, 45: 1951-1957.</span></a><span> </span></p></li></ul><p><span>传统治理措施：</span></p><p><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL%2bgAAsZ&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[3]兰慧峰,孙建军,李国玉,等. 城市轨道交通钢轨电位限制装置操作过电压抑制研究[J]. 都市快轨交通, 2025, 38: 149-56.</span></a><span> </span>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL-gABsc&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[8]孙建军,邢春阳,兰慧峰,等. 接触轨供电制式下专用轨回流方案研究[J]. 都市快轨交通, 2025, 38: 142-148+156.</span></a><span> </span>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL9wAFsR&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[10]Chengqian Zhu, Guifu Du, Yawen Ding, et al. Rail potential control with train diagram optimization in multitrain DC traction power system[J]. International Journal of Rail Transportation, 2021, 10(4): 476–496.</span></a><span>（多列车直流牵引供电系统中列车运行图优化与轨道电位控制）</span>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL%2bQABsb&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[22]周奇,林圣,邹全德,等. 土壤结构对城轨中杂散电流分布的影响分析[J]. 都市快轨交通, 2022, 35: 10-16.</span></a><span> </span>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL-gAAsd&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[23]刘炜,郑杰,李田,等. 排流装置对直流牵引供电系统杂散电流分布的影响[J]. 电工技术学报, 2022, 37: 4565-4574.</span></a><span> </span></p><p><span>电力电子治理措施：</span></p><p><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL9wABsV&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[1]Wang Miao, Yang Xiaofeng, Ni Menghan, at al. Dynamic Performance Analysis, Optimization, and Verification of DC Auto-Transformer System with Rail Potential and Stray Current Emulator[J]. IEEE Transactions on Transportation Electrification, 2022, 8(1): 480-91.</span></a>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcMAAADsn&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[9]夏雪,杨晓峰,陈茂鲁,等. 零阻变换器系统中开关单元的优化分布方法[J]. 都市快轨交通, 2022, 35: 1-7+16.</span></a><span> </span>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL%2bgACsb&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[15]顾靖达,杨晓峰,郑琼林,等. 基于不同接地方式与列车工况的负阻变换器牵引供电系统轨道电位与杂散电流[J]. 电工技术学报, 2021, 36: 1703-1717.</span></a><span> </span>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcMAAAEsg&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[16]陈茂鲁,杨晓峰,郑琼林,等. 零阻变换器系统中晶闸管开关单元的关断策略[J]. 都市快轨交通, 2022, 35: 25-33.</span></a><span> </span></p><p><span>动模：</span></p><p><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcMAAACsm&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[17]王慧康,杨晓峰,倪梦涵,等. 轨道电位与杂散电流动模实验平台[J]. 电工技术学报, 2020, 35: 3609-3618.</span></a><span> </span>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL-gADse&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[18]杨晓峰,王慧康,郑琼林. 直流牵引供电系统中有限边界边缘效应对轨道电位的影响[J]. 北京交通大学学报, 2020, 44: 1-11.</span></a><span> </span>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL-QABsf&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[19]杨晓峰,薛皓,郑琼林. 基于双向可变电阻模块的杂散电流与轨道电位动态模拟系统[J]. 电工技术学报, 2019, 34: 2793-2805.</span></a><span> </span>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL%2bAABsa&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[20]徐杰,杨晓峰,王慧康,等. 一种多区段地铁轨道电位动态模拟系统[J]. 北京交通大学学报, 2020, 44: 57-65.</span></a><span> </span>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL-gAEsZ&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[21]王双慧,杨晓峰,王慧康,等. 考虑列车运行工况的钢轨电位硬件动态模拟平台[J]. 都市快轨交通, 2022, 35: 8-16.</span></a><span> </span>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL%2bAAAsb&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[26]Ibrahem Amr, Elrayyah Ali, Sozer Yilmaz, at al. DC Railway System Emulator for Stray Current and Touch Voltage Prediction[J]. IEEE Transactions on Industry Applications, 2017, 53(1): 439-446.</span></a><span> </span></p><p><span>综述：</span></p><p><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL9wAEsQ&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[2]Yang Xiaofeng, Wang Miao, Zheng Trillion Q., at al. Modelling and Simulation of Stray Current in Urban Rail Transit—A Review[J]. Urban Rail Transit, 2024, 10(3): 189-99.</span></a><span> </span>
+<a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL%2bQAEse&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[4]Bhagat Sahil, 杨晓峰, 王淼, at al. 城市轨道交通杂散电流治理的综述与评估（英文）[J]. 电工技术学报, 2021, 36(23): 4851-63.</span></a><span> </span></p><h2 id='城市轨道交通背景与治理措施必要性'><span>城市轨道交通背景与治理措施必要性</span></h2><p><span>  </span><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL9wABsV&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[1]Wang Miao, Yang Xiaofeng, Ni Menghan, at al. Dynamic Performance Analysis, Optimization, and Verification of DC Auto-Transformer System with Rail Potential and Stray Current Emulator[J]. IEEE Transactions on Transportation Electrification, 2022, 8(1): 480-91.</span></a></p><blockquote><p><span>    NOWADAYS, with rapid development of urban rail transit (URT) in the world, the rail potential and stray current issues attract more attention gradually . URT generally adopts dc traction power supply as shown in Fig. 1, and the running rails act as the return path of traction current to the negative cubicle of traction substation (TS) . However, the rails are not totally isolated from the earth. Apart of current leaks from the rails to the earth and becomes stray current, which causes the serious interference on URT signaling equipment and electrochemical corrosions on the rail, metallic pipelines, and underground structures.  Meanwhile, there is a significant potential difference between the rails and earth, which is called rail potential. Higher rail potential endangers the personal safety and normal operation of URT</span>
+<span>（当今，随着全球范围内城市轨道交通（URT）的迅速发展，轨道电位和杂散电流问题逐渐引起更多关注。城市轨道交通通常采用如图1所示的直流牵引供电系统，运行轨道作为牵引电流的回流通路，将电流引回牵引变电站（TS）的负母线。然而，轨道并非完全与大地绝缘。部分电流从轨道泄漏至大地，形成杂散电流，这不仅对城市轨道交通信号设备造成严重干扰，还会引起轨道、金属管道及地下结构的电化学腐蚀。同时，轨道与大地之间存在显著的电位差，称为轨道电位。较高的轨道电位危及人身安全及城市轨道交通的正常运行。）</span></p></blockquote><p><span>  </span><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL9wAEsQ&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[2]Yang Xiaofeng, Wang Miao, Zheng Trillion Q., at al. Modelling and Simulation of Stray Current in Urban Rail Transit—A Review[J]. Urban Rail Transit, 2024, 10(3): 189-99.</span></a><span> </span></p><blockquote><p><span>    Urban rail transit has developed rapidly in cities around the world, because of its advantages of punctuality, high speed, large volume and low pollution. The direct current (DC) traction power supply system is widely adopted in urban rail transit. However, conventional DC traction power supply systems generally employ running rail as the return path for traction current, which not only results in high rail potential, threatening equipment and personal safety, but also leads to stray current leakage and corrosion on the underground metal pipelines. Meanwhile, the stray current may enter the neighbouring power grid, which flows into the transformer winding through the neutral wire and generates DC bias, thereby affecting the safety and stable operation of the power grid.（城市轨道交通因其准时、快速、大容量和低污染的优势在世界各地城市中得到了快速发展。直流牵引供电系统在城市轨道交通中被广泛采用。然而，传统的直流牵引供电系统通常使用运行轨道作为牵引电流的回流通路，这不仅导致轨道电位过高，威胁设备及人身安全，还会引起杂散电流泄漏并对地下金属管道造成腐蚀。同时，杂散电流可能进入邻近电网，通过中性线流入变压器绕组并产生直流偏磁，从而影响电网的安全稳定运行。）</span></p></blockquote><p><span>  </span><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL%2bgAAsZ&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[3]兰慧峰,孙建军,李国玉,等. 城市轨道交通钢轨电位限制装置操作过电压抑制研究[J]. 都市快轨交通, 2025, 38: 149-56.</span></a><span> </span></p><blockquote><p><span>	</span><span>为了保障人身安全，通常会在运营线路的车站和段场中安装钢轨电位限制装置(over-voltage protection device， OVPD)，但当钢轨电位限制装置OVPD复归时产生的操作过电压可能会导致OVPD Ⅱ段动作，甚至闭锁，导致钢轨电位限制装置将大地和钢轨短接，成为杂散电流泄漏的通路。随着城市轨道运营里程的不断增加，杂散电流造成的周边电力系统直流偏磁、城市管网腐蚀损坏等问题十分严重，已经严重威胁到电力系统和油气系统的安全运行。</span>
+<span>​</span><span>	</span><span>国内外城市轨道交通主要采用直流供电方式。在直流牵引供电系统中，钢轨通常采用浮地安装，但无法保证钢轨对地完全绝缘，因此当走行轨同时作为牵引回流路径时，钢轨与大地之间存在一个电位差，即钢轨电位。为保障人身安全，一般在各个车站以及车辆段均安装钢轨电位限制器(over-voltage protection device，OVPD)。当钢轨电位过高时，钢轨通过OVPD直接接地，用以钳制钢轨电位。OVPD动作后，大量牵引回流经由OVPD直接流入大地，形成杂散电流。当OVPD合闸接地时，由OVPD泄漏至大地的杂散电流可达2000A，可引起地下钢轨、地下金属结构的电化学腐蚀。</span></p></blockquote><p><span>  </span><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL%2bQACsY&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[5]宁晓雁,高国强,尹彩琴,等. 地铁引起的变压器偏磁电流特征分析[J]. 都市快轨交通, 2023, 36: 125-31.</span></a><span> </span></p><blockquote><p><span>	</span><span>近年来，交流电力变压器直流偏磁问题越来越频繁，随着城市新兴地铁线路广泛投运，地铁杂散电流被认为是导致其周边变压器直流偏磁的主要原因。理想情况下，钢轨具有良好的绝缘性能，牵引电流经由接触网、列车和钢轨最终流至牵引变电所，由于列车负载变化致使牵引电流具有时变性，在空间中激发产生时变磁场，接触网和钢轨流过的电流数值相近，方向相反，最终存在空间中的磁场很小。但由于列车运营磨损，加之受道床环境影响，牵引电流泄露进入大地形成杂散电流，致使钢轨电流与接触网电流出现较大差值，杂散电流经接地网侵入电力系统，且导致接触网和钢轨产生的磁场无法抵消。当电力系统中由两接地变压器、输电线路和大地构成的等效闭合回路处于该磁场环境中时，等效回路中往往会产生感应电流。因此，地铁周边变压器中出现的偏磁电流主要由杂散电流和感应电流两部分组成。</span>
+<span>​</span><span>	</span><span>针对地铁引起的直流偏磁，上述研究忽略了地铁感应电流的存在。</span></p></blockquote><p><span>  </span><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL-gACsf&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[6]王文博, 李文恒. 电网拓扑结构对地铁杂散电流分布特性研究[J]. 都市快轨交通, 2023, 36(5): 110-116.</span></a><span> </span></p><blockquote><p><span>	</span><span>随着我国“双碳”战略的提出和推进，城市轨道交通作为城市承载绿色、低碳出行的骨干交通方式，将迎来持续稳定的发展机遇期。未来城市地铁线路将愈发密集化和网络化，地铁系统与电网系统的交互程度不断升高，与此同时，由地铁引发的杂散电流造成周边变压器直流偏磁现象也越来越严重。在广州、上海等地铁密集城市，地铁附近变压器发生周期性直流偏磁现象，其中广州地铁3号线附近某变电站在地铁运行高峰期时，中性点电流最大可达50A。而长时间的直流偏磁对变压器本体存在不利影响，如长期的低 频振动会导致变压器内部螺栓松动、撑条脱落、绕组移位等问题，严重影响电网及设备安全稳定运行，影响城市供电质量</span></p></blockquote><p><span>  </span><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL%2bQAAsa&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[7]夏雪,杨晓峰,陈茂鲁,等. 动态杂散电流的时频特征及腐蚀行为研究[J]. 都市快轨交通, 2023, 36: 117-124.</span></a><span> </span></p><blockquote><p><span>	</span><span>近年来，城市轨道交通凭借其速度快、运量大、安全便捷等优势，呈现高速发展趋势。直流牵引供电系统通常采用走行轨兼作列车电流的回流路径，钢轨纵向电阻使得走行轨存在对地压降，即轨道电位。此外，走行轨对大地之间并非完全绝缘，这将导致部分回流电流泄漏至周边大地形成杂散电流。杂散电流会进一步对沿线埋地金属构件等产生电化学腐蚀现象，严重时甚至引起管道泄漏、火灾等事故。</span></p></blockquote><p><span>  </span><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL-gABsc&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[8]孙建军,邢春阳,兰慧峰,等. 接触轨供电制式下专用轨回流方案研究[J]. 都市快轨交通, 2025, 38: 142-148+156.</span></a><span> </span></p><blockquote><p><span>	</span><span>传统城市轨道交通直流牵引供电系统采用接触轨或架空接触网供电、走行轨回流的方式。对于走行轨兼做回流轨而言，易受施工、环境等因素的影响，其对地的绝缘性能普遍未达到《地铁杂散电流腐蚀防护技术标准》(CJJ/T49—2020)中提出的过渡电阻不小于15Ω·km的标准[1-2]，列车运行时势必会产生杂散电流泄漏，引起地铁结构钢筋和沿线市政管道腐蚀等危害。</span></p></blockquote><p><span>  </span><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcMAAADsn&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[9]夏雪,杨晓峰,陈茂鲁,等. 零阻变换器系统中开关单元的优化分布方法[J]. 都市快轨交通, 2022, 35: 1-7+16.</span></a><span> </span></p><blockquote><p><span>	</span><span>城市轨道交通输送客流量大、方便快捷，近年来获得了迅猛发展。目前城市轨道交通多采用直流牵引供电系统，出于经济性考虑，走行轨通常兼作列车电流回流路径。然而，走行轨存在纵向电阻，列车电流流经走行轨产生与地之间的压降，即钢轨电位；部分电流从走行轨进入大地，形成杂散电流。过高的钢轨电位会威胁人员安全，造成地铁停运等事故；而杂散电流则会逐渐腐蚀轨道、沿线埋地金属管线等，影响其使用寿命，因此需要采取措施加以抑制。</span></p></blockquote><p><span>  </span><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL9wAFsR&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[10]Chengqian Zhu, Guifu Du, Yawen Ding, et al. Rail potential control with train diagram optimization in multitrain DC traction power system[J]. International Journal of Rail Transportation, 2021, 10(4): 476–496.</span></a><span>（多列车直流牵引供电系统中列车运行图优化与轨道电位控制）</span></p><blockquote><p><span>	</span><span> At present, DC traction power system widely uses the running rails as the backflow conductor in the system. Because of the resistance of the rails, there is a certain potential between the rails and earth, which is called rail potential. Part of the current in the rails will flow to the earth, forming stray current. Excessive rail potential and stray current will endanger the safety of passengers  and the equipment. Under normal operation conditions, the rail potential should be controlled within 90 V. Over Voltage Protection Devices (OVPDs) are usually installed at each  traction substation (TSS). If the rail potential on the OVPD exceeds the safety limit of 90 V, OVPD  will be triggered to connect the rails to earth, so as to control the rail potential.</span>
+<span>（目前，直流牵引供电系统普遍采用走行轨作为系统的回流导体。由于轨道电阻的存在，轨道与大地之间会产生一定的电位差，称为轨道电位。轨道中的部分电流会流入大地，形成杂散电流。过高的轨道电位和杂散电流会危及乘客和设备的安全。在正常运行条件下，轨道电位应控制在90伏以内。通常在每个牵引变电所（TSS）安装过电压保护装置（OVPD）。如果OVPD上的轨道电位超过90伏的安全限值，OVPD将被触发，将轨道与大地连接，从而控制轨道电位。)</span></p></blockquote><p><span>  </span><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL9wADsX&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[11]Szymenderski Jan, Machczyński Wojciech,Budnik Krzysztof. Modeling Effects of Stochastic Stray Currents from D.C. Traction on Corrosion Hazard of Buried Pipelines[J]. Energies, 2019, 12(23): 4570.</span></a><span>（直流牵引系统随机杂散电流对埋地管道腐蚀风险影响建模）</span></p><blockquote><p><span>	</span><span>These currents flow in the ground and, when they encounter an underground metal structure, can lead to the acceleration of electrochemical corrosion.</span>
+<span>（这些电流在地中流动，当遇到地下金属结构时，会加速电化学腐蚀的发生。)</span>
+<span>​</span><span>	</span><span>Stray currents flowing into the ground from D.C. electric traction return circuits (rail and tram) are still the greatest corrosion risk for steel objects operating underground, such as pipelines or tanks.</span>
+<span>（从直流电气牵引回流电路（铁路和有轨电车）流入地中的杂散电流，仍然是地下运行的钢制物体（如管道或储罐）面临的最大腐蚀风险。)</span>
+<span>​</span><span>	</span><span>Globally, electric-rail transport is very popular, and its negative impact on underground metal installations can be very dangerous, and threaten lives and property. That is why determining the scale of danger is very important. </span>
+<span>(在全球范围内，电气化轨道交通非常普及，其对地下金属设施的负面影响可能极为严重，并威胁生命和财产安全。因此，确定这种危险的规模至关重要。)</span></p></blockquote><p><span>  </span><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL9wACsW&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[12]Wang Aimin, Lin Sheng, Hu Ziheng, at al. Evaluation Model of DC Current Distribution in AC Power Systems Caused by Stray Current of DC Metro Systems[J]. IEEE Transactions on Power Delivery, 2021, 36(1): 114-123.</span></a><span>（直流地铁系统杂散电流引起的交流电力系统直流电流分布评估模型）</span></p><blockquote><p><span>	</span><span> Especially, the stray current of the DC metro system following in the AC power system may cause many serious consequences such as the corrosion of the grounding grids, plenty of harmonics, and the dc bias of transformers. Therefore, it is significant to evaluate the dc current distribution in the AC power system caused by the stray current.</span>
+<span>（直流地铁系统的杂散电流流入交流电力系统可能会引发诸多严重后果，如接地网的腐蚀、大量谐波的产生以及变压器的直流偏磁等。因此，评估由杂散电流引起的交流电力系统中的直流电流分布具有重要意义。)</span>
+<span>​</span><span>	</span><span> In addition, with the dc current increasing, the transformers in the AC power system may be under dc bias if their neutral points are grounded. The dc bias can cause acute vibration, great noise, and high temperature of the transformer, even make the transformer fail.</span>
+<span>(此外，随着直流电流的增加，如果交流电力系统中变压器的中性点接地，这些变压器可能会处于直流偏磁状态。直流偏磁会导致变压器产生剧烈振动、巨大噪音和高温，甚至可能使变压器发生故障。)</span></p></blockquote><p><span>  </span><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcMAAABsl&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[13]罗远国,刘君,毛钧毅,等. 轨地过渡电阻对电网地铁杂散电流分布影响分析[J]. 电网与清洁能源, 2021, 37: 32-40+46.</span></a></p><blockquote><p><span>	</span><span>地铁运行产生的杂散电流侵入中性点接地的变压器后，会导致其发生直流偏磁现象，出现异常振动噪声以及励磁电流严重畸变等问题。</span></p></blockquote><p><span>  </span><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcMAAAAsk&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[14]彭平,曾祥君,倪砚茹,等. 考虑地铁杂散电流影响的变压器直流偏磁电流建模方法[J]. 电力科学与技术学报, 2021, 36: 192-198.</span></a></p><blockquote><p><span>	</span><span>在城市地铁运行过程中会产生杂散电流，杂散电流会流入周边中性点接地的变压器，使变压器工作点偏移而出现直流偏磁现象，导致变压器损耗增加、系统谐波增加甚至继电保护误动等恶劣后果，严重影响电网稳定运行。</span></p></blockquote><p><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL%2bgACsb&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[15]顾靖达,杨晓峰,郑琼林,等. 基于不同接地方式与列车工况的负阻变换器牵引供电系统轨道电位与杂散电流[J]. 电工技术学报, 2021, 36: 1703-1717.</span></a><span> </span></p><blockquote><p><span>	</span><span>近年来，随着城市现代化建设的推进，城市轨道交通因绿色环保、输送客流量大、安全性高等特点，得以迅速发展。城市轨道交通普遍采用直流牵引供电系统，其存在的轨道电位与杂散电流问题受到广泛的关注。图 1是轨道电位与杂散电流的产生机理示意图。出于经济性考虑，走行轨在支撑列车运行的同时，通常兼作列车电流的回流轨。然而，走行轨与大地之间的绝缘水平随时间推移逐渐降低，部分回流电流经轨道-地电阻，由走行轨泄露至大地，并流向其他路径，如埋地基础设施的金属结构与管线等。此部分泄露的电流即为杂散电流。由于轨道-地电阻的作用，走行轨与大地之间形成电势差，称为轨道电位，如图1所示，杂散电流会导致走行轨与牵引变电所（Traction Substation, TS）负极附近的埋地金属结构遭受电化学腐蚀，缩短其使用寿命，甚至导致锈蚀穿孔，引起火灾或爆炸等事故[5]。此外，当乘客上下车时，过高的轨道电位会导致电击事故发生，严重威胁司乘的人身安全。因此，轨道电位与杂散电流问题亟待解决。</span></p></blockquote><p><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcMAAAEsg&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[16]陈茂鲁,杨晓峰,郑琼林,等. 零阻变换器系统中晶闸管开关单元的关断策略[J]. 都市快轨交通, 2022, 35: 25-33.</span></a><span> </span></p><blockquote><p><span>	</span><span>城市轨道交通具有运量大、安全环保等优点，近年来获得了快速发展。截至2021年底，我国内地城市轨道交通累计运营里程达9192km。在城市轨道交通采用的直流牵引供电中，走行轨通常兼作列车牵引电流的回流路径。一方面，由于走行轨纵向电阻的存在，轨地之间存在电位差，即轨道电位；另一方面，走行轨与大地之间并非完全绝缘，部分电流会泄漏至大地中，形成杂散电流。过高的轨道电位会危及人员安全，而钢轨电位保护装置动作会强制将牵引所接地，进而造成更多的杂散电流泄漏。杂散电流会对沿线的地下金属管道产生电化学腐蚀，造成管道腐蚀穿孔，因此在城市轨道交通的建设和运维中需要对杂散电流进行防护。</span></p></blockquote><p><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL%2bQABsb&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[22]周奇,林圣,邹全德,等. 土壤结构对城轨中杂散电流分布的影响分析[J]. 都市快轨交通, 2022, 35: 10-16.</span></a><span> </span></p><blockquote><p><span>	</span><span>城市轨道交通主要采用直流供电，由于钢轨无法与大地完全绝缘，使得钢轨对地具有一定的钢轨电位，导致部分电流从钢轨泄漏至大地，形成杂散电流。城市轨道交通以其运量大、绿色环保等优势得到快速发展。地铁线网的大规模、高密度运行带来了严重的杂散电流问题。杂散电流不仅会加速隧道结构钢筋、接地网、地铁线路周围的天燃气管道、水管等埋地金属的腐蚀，还会流入城市电网接地变压器导致变压器出现直流偏磁现象，危及变压器运行安全。如上海地铁2号线沿线世纪大道下的燃气管道，由于杂散电流腐蚀，已经发生了数十次泄漏事故；深圳市500kV深圳站主变压器由于长期处于直流偏磁振动异常状态，导致出现绝缘抱箍松动、紧固件松脱、绕组过热等情况，严重威胁主变压器运行安全。为此，国内外已发布了一系列标准用于防治杂散电流。然而，城市轨道交通跨度大，且沿线土壤地质环境复杂，因此，有必要就土壤结构对杂散电流分布的影响展开研究，以指导杂散电流防治。</span></p></blockquote><p><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL-gAAsd&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[23]刘炜,郑杰,李田,等. 排流装置对直流牵引供电系统杂散电流分布的影响[J]. 电工技术学报, 2022, 37: 4565-4574.</span></a><span> </span></p><blockquote><p><span>	</span><span>在直流牵引供电系统中，较高的钢轨对地过渡电阻只在轨-地绝缘良好且轨道环境干燥的情况下</span>
+<span>存在。实际上，由于钢轨对地过渡电阻有限，总会有部分钢轨回流泄漏至大地，这部分电流称为杂散电流。杂散电流可引起金属结构腐蚀，也能造成变电器主变压器直流偏磁等。</span></p></blockquote><p><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL%2bgABsY&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[24]王爱民,林圣,李俊逸,等. 城市轨道交通长线路杂散电流仿真模型[J]. 高电压技术, 2020, 46: 1379-1386.</span></a></p><blockquote><p><span>	</span><span>城市轨道交通具有运量大、效率高、空间占用率低等优势，在改善城市交通环境中发挥了重大作用[1]。然而，随着城市轨道交通线路里程的增加，线路与变电站临近的情况已不可避免，由杂散电流导致的城市电网电力变压器直流偏磁的问题日益突出[2-6]。目前已有成都、长沙、深圳、贵阳等多个城市出现了由于城市轨道交通杂散电流导致的电力变压器直流偏磁现象。城市轨道交通杂散电流分布是研究其线路附近电力变压器直流偏磁变化规律与抑制策略的基础，因此研究城市轨道交通线路杂散电流分布具有重要的工程应用价值。</span></p></blockquote><p><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL%2bQADsZ&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[25]史云涛,赵丽平,林圣,等. 城市电网中地铁杂散电流分布规律及影响因素分析[J]. 电网技术, 2021, 45: 1951-1957.</span></a></p><blockquote><p><span>	</span><span>为解决城市交通拥堵问题，目前轨道交通应用日益广泛[1]。由于城市轨道交通供电牵引网采用直流供电，钢轨作为其直流供电回流的媒介，多数情况下由于工艺问题等原因使得钢轨与大地之间无法做到完全绝缘，导致钢轨向周围土壤介质泄露一定的直流电流，该直流电流被称为杂散电流[2-3]。由于城市电网中存在大量接地变压器，因此当杂散电流在大地中流通时，可通过大地流入到接地变压器所连接的接地网中，进而入侵城市电网[4]。杂散电流入侵城市电网时，可导致变压器发生直流偏磁现象，使得变压器振动加剧、噪声增大、局部温升增加，严重时可大大影响变压器的使用寿命；同时杂散电流的入侵可导致电网的电抗器谐波增加、接地网加速腐蚀等现象，给电网的正常运行带来严重隐患[5-8]。近年来随着城市轨道交通的发展，由地铁杂散电流导致的变压器直流偏磁问题越来越为频繁；且电网负荷密度越大，变电站地理位置越集中，就越容易受到来自地铁杂散电流的入侵[9]。目前，长沙、深圳、贵阳、福州、成都等地城市电网运行均因地铁线路的开通而受到影响，接地变压器出现了严重的直流偏磁问题[5,9-12]。</span></p></blockquote><h2 id='杂散电流的传统治理措施'><span>杂散电流的传统治理措施</span></h2><p><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL9wABsV&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[1]Wang Miao, Yang Xiaofeng, Ni Menghan, at al. Dynamic Performance Analysis, Optimization, and Verification of DC Auto-Transformer System with Rail Potential and Stray Current Emulator[J]. IEEE Transactions on Transportation Electrification, 2022, 8(1): 480-91.</span></a><span> </span></p><blockquote><p><span>	</span><span>For the rail potential and stray current mitigation, many measures have been adopted in URT. The typical mitigation measures include: optimizing TS power supply, strengthening the rail-to-earth insulation, setting the stray current collection mat, adopting the cathodic protection, and so on. However, these measures are mainly adopted in URT construction stage with high costs, while the performances deteriorate over time. And it is difficult to renovate for the long-running URT with serious stray current leakage. Meanwhile, URT generally installs the over voltage protection device (OVPD) at TS, which connects the rails to earth directly once the rail potential exceeds its threshold value. However, the stray current of URT increases significantly when OVPD is activated, and OVPD may be activated frequently during rush hour. Therefore, new technology on the rail potential and stray current mitigation is urgently required because of the existing measures’ limitation. Considering that the source of rail potential and stray current issues is the rail-returned current, these issues may be solved fundamentally if the rail current is transferred to other lines with the power electronic technology.（为了缓解轨道电位和杂散电流问题，城市轨道交通已采取多种措施。典型的缓解措施包括：优化牵引变电站供电、加强轨道对地绝缘、设置杂散电流收集网、采用阴极保护等。然而，这些措施主要在城市轨道交通建设阶段实施，成本高昂，且随着时间的推移性能会逐渐下降。对于长期运行且杂散电流泄漏严重的城市轨道交通系统，改造难度较大。同时，城市轨道交通通常在牵引变电站安装过电压保护装置（OVPD），一旦轨道电位超过其阈值，该装置会直接将轨道与大地连接。然而，当OVPD激活时，城市轨道交通的杂散电流会显著增加，且在高峰时段OVPD可能会频繁激活。因此，由于现有措施的局限性，迫切需要新的技术来缓解轨道电位和杂散电流问题。考虑到轨道电位和杂散电流问题的根源是轨道回流电流，如果能够利用电力电子技术将轨道电流转移到其他线路，这些问题或许可以从根本上得到解决。）</span></p></blockquote><p><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL-gABsc&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[8]孙建军,邢春阳,兰慧峰,等. 接触轨供电制式下专用轨回流方案研究[J]. 都市快轨交通, 2025, 38: 142-148+156.</span></a><span> </span></p><blockquote><p><span>	</span><span>城市轨道交通直流供电系统中杂散电流腐蚀防护原则主要以抑制杂散电流产生、减少杂散电流向地铁外部扩散为主[6]，但现有杂散电流防护措施无法有效抑制杂散电流的泄漏。</span>
+<span>​</span><span>	</span><span>从国内外对杂散电流腐蚀防护的研究成果来看，采用专用轨回流是一种有效的解决方案[7-8]，已在国内外城市轨道交通线路中有成熟的应用案例，如伦敦Jubilee Line采用侧部接触轨供电+底部专用轨回流方式；温哥华Millennium Line采用同侧布置接触轨供电+专用轨回流方式；宁波轨道交通4号线、6号线，郑州轨道交通17号线，绍兴地铁2号线等地铁线路采用架空接触网供电+专用轨回流方式。国内青岛、武汉、无锡等城市的城市轨道交通以接触轨作为正极，国外城市轨道交通线路采用接触轨供电+专用轨回流方案。</span></p></blockquote><p><span> </span><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcMAAADsn&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[9]夏雪,杨晓峰,陈茂鲁,等. 零阻变换器系统中开关单元的优化分布方法[J]. 都市快轨交通, 2022, 35: 1-7+16.</span></a><span> </span></p><blockquote><p><span>	</span><span>为限制钢轨电位，在线路中设置钢轨电位保护装置(over-voltage protection device，OVPD)，钢轨电位过高时，OVPD动作将钢轨直接接地，但会导致更多的电流泄漏。治理杂散电流的方法大致分为排流法与源头控制法：前者通过加装排流网、排流柜等设备收集杂散电流；后者则从杂散电流产生源头出发，通过提高供电电压、增加沿线牵引所数量、增大轨道对地电阻、采用专用轨(第四轨)回流等方法，减少杂散电流。</span></p></blockquote><p><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL%2bgACsb&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[15]顾靖达,杨晓峰,郑琼林,等. 基于不同接地方式与列车工况的负阻变换器牵引供电系统轨道电位与杂散电流[J]. 电工技术学报, 2021, 36: 1703-1717.</span></a><span> </span></p><blockquote><p><span>	</span><span>为此，国内外学者提出了一系列轨道电位与杂散电流的治理措施。传统治理措施主要有装设排流网、采用涂层材料或高电阻率的混凝土增强走行轨与大地之间的绝缘、增设专用回流轨、缩短供电距离、提高供电电压、增大埋地基础设施的电阻和减小走行轨纵向电阻等。排流网难以收集全部的杂散电流，甚至会造成电流的二次泄露，加重杂散电流的腐蚀。而绝缘材料的性能会随时间逐渐变差，进而影响其治理效果。专用回流轨与大地之间的绝缘措施存在相似的问题，且其带来的车辆与隧道等相关部件的改造成本昂贵。现场应用中，对供电距离、供电电压、埋地金属或走行轨进行改造，受城市规划与行业标准等诸多因素限制，实施较为困难。</span></p></blockquote><p><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcMAAAEsg&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[16]陈茂鲁,杨晓峰,郑琼林,等. 零阻变换器系统中晶闸管开关单元的关断策略[J]. 都市快轨交通, 2022, 35: 25-33.</span></a><span> </span></p><blockquote><p><span>	</span><span>杂散电流治理方法通常包括“源控法”和“排流法”。前者通过提高系统电压等级、缩小牵引所(traction substation，TS)间距、采用双边供电等方法降低走行轨回流电流的幅值；后者则通过排流网和排流柜为杂散电流提供一个低阻抗通道回流牵引所。这些方法通常在线路建设的过程中实施，但对既有线路的改造和维护难度大，且治理效果随时间衰减。</span></p></blockquote><p><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL-gAAsd&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[23]刘炜,郑杰,李田,等. 排流装置对直流牵引供电系统杂散电流分布的影响[J]. 电工技术学报, 2022, 37: 4565-4574.</span></a><span> </span></p><blockquote><p><span>	</span><span>杂散电流防护措施主要包括缩短变电所距离、增大钢轨对地过渡电阻、减小回流系统单位长度电阻和增加均流线等。文献[10]中，刘炜等提出了一种计及城市轨道逆变回馈装置的交直流统一供电计算方法，其仿真结果指出，可通过逆变回馈装置调节系统功率分配，改善钢轨电位，进而减小杂散电流。文献[11-12]中，顾靖达和王淼等更是提出利用电力电子技术，改进传统的牵引供电系统，从源头上解决杂散电流与钢轨电位问题。</span></p></blockquote><p><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL%2bQAFsf&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[27]王淼,杨晓峰,李世翔,等. 城市轨道交通直流自耦变压器牵引供电系统故障保护研究[J]. 电工技术学报, 2022, 37: 976-989.</span></a><span> </span></p><blockquote><p><span>	</span><span>城市轨道交通普遍采用直流牵引供电系统，如国内地铁标准电压等级为1500V或750V。现有直流牵引供电系统中，牵引变电所通过牵引网（或第三轨）给列车供电，然后列车电流通过轨道回流至牵引变电所负极。然而，由于轨道和大地之间并非完全绝缘，且轨道自身存在一定纵向电阻，使得系统中存在轨道电位和杂散电流问题[4_6]。现有治理措施多采用增强轨地绝缘，设置杂散电流收集网、轨道电位限制装置等措施[7-9]，但硬件成本较高、效果有限，且性能多随时间推移而逐渐下降。为此，近年来如图1所示的基于电力电子的治理措施得到广泛研究。在现有直流牵引供电系统的基础上，上述治理措施通过安装额外的电力电子装置，将列车电流从轨道转移至回流线，进而实现系统中轨道电位和杂散电流的源头抑制</span><a href='基于不同接地方式与列车工况...供电系统轨道电位与杂散电流_顾靖达.pdf'><span>[10-12]</span></a><span> 。</span></p></blockquote><h2 id='杂散电流的电力电子治理措施'><span>杂散电流的电力电子治理措施</span></h2><p><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL9wABsV&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[1]Wang Miao, Yang Xiaofeng, Ni Menghan, at al. Dynamic Performance Analysis, Optimization, and Verification of DC Auto-Transformer System with Rail Potential and Stray Current Emulator[J]. IEEE Transactions on Transportation Electrification, 2022, 8(1): 480-91.</span></a><span> </span></p><blockquote><p><span>	</span><span>Many power-electronic-technology-based traction power supply systems for URT have been studied in recent years. Medium-voltage dc three-wire supply system is presented in [19], which transfers parts of rail current to the additional feed line through dc chopper, but the rest current still flows  back to TS through the running rail. Fotouhi et al. [20] presented dc booster circuit for the dc traction power supply system, which may transfer the total rail current to the return current line. However, each dc booster consists of two dc inductors and 11 switches, which leads to complex control and high cost. Moreover, the negative resistance converter (NRC) traction power system is presented in [21] and [22]. Here, NRC and switch units provide zero-resistance loops to shorten the return path of rail current, and the rail current may be transferred to the return line completely. NRC has fewer components (i.e., one dc inductor and four switches) compared with dc booster in [20], but the NRC system requires multiple voltage sensors and real-time train position to ensure that NRC and multiple switch units operate accurately.(近年来，基于电力电子技术的城市轨道交通牵引供电系统得到了广泛研究。文献[19]提出了一种中压直流三线供电系统，该系统通过直流斩波器将部分轨道电流转移到附加馈电线，但剩余电流仍通过运行轨道流回牵引变电站。Fotouhi等人在文献[20]中提出了一种用于直流牵引供电系统的直流升压电路，该电路可以将全部轨道电流转移到回流线路。然而，每个直流升压器由两个直流电感器和11个开关组成，导致控制复杂且成本高昂。此外，文献[21]和[22]提出了负电阻变换器（NRC）牵引供电系统。NRC和开关单元提供零电阻回路以缩短轨道电流的回流路径，轨道电流可以完全转移到回流线路。与文献[20]中的直流升压器相比，NRC的元件较少（即一个直流电感器和四个开关），但NRC系统需要多个电压传感器和实时列车位置信息，以确保NRC和多个开关单元准确运行。)</span></p></blockquote><p><span> </span><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcMAAADsn&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[9]夏雪,杨晓峰,陈茂鲁,等. 零阻变换器系统中开关单元的优化分布方法[J]. 都市快轨交通, 2022, 35: 1-7+16.</span></a><span> </span></p><blockquote><p><span>	</span><span>上述措施仅适用于新建线路，且治理效果随时间逐渐下降。近年来，基于电力电子技术的硬件治理措施受到关注，即在现有供电系统结构的基础上加装电力电子设备，相对于传统治理措施治理效果好、便于维护。Fotouhi等采用了一种吸流(Booster)电路，使走行轨回流电流经专用回流线缆转移至牵引所负极[18]。有研究者采用基于直流自耦变压器(DC-auto transformer，DCAT)的牵引供电系统，通过 DCAT装置将走行轨电流转移至负馈线[19-20]。这两种措施均能从源头上治理杂散电流，但所采用的电力电子器件数目较多，且控制策略复杂。Gu等提出了一种零阻变换器系统(zero-resistance converter system，ZRCS)，在传统牵引供电系统的基础上，加装开关单元、负阻变换器、回流线缆，将走行轨电流转移至增设的回流线缆[21]。Yang 等分析了ZRCS不同部件的典型故障，验证发现 ZRCS在大多故障情形下均能降低钢轨电位[22]。该系统器件数目较少，控制简单，不影响牵引供电系统的可靠性，便于现场安装与维护。</span></p></blockquote><p><a href='迷流文献总结/基于不同接地方式与列车工况..供电系统轨道电位与杂散电流_顾靖达.pdf'><span>[15]顾靖达,杨晓峰,郑琼林,等. 基于不同接地方式与列车工况的负阻变换器牵引供电系统轨道电位与杂散电流[J]. 电工技术学报, 2021, 36: 1703-1717.</span></a><span> </span></p><blockquote><p><span>	</span><span>为解决城市轨道交通中轨道电位与杂散电流导致的安全问题，该文提出一种负阻变换器牵引供电系统（NRC-TPS）。在传统牵引供电系统（CON-TPS）的基础上，NRC-TPS通过直接安装电力电子设备，为列车电流提供零阻回路，缩短其回流至牵引变电所的路径长度。由于杂散电流的产生源头减少，NRC-TPS能够降低城市轨道交通系统的轨道电位与杂散电流。</span></p></blockquote><p><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcMAAAEsg&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[16]陈茂鲁,杨晓峰,郑琼林,等. 零阻变换器系统中晶闸管开关单元的关断策略[J]. 都市快轨交通, 2022, 35: 25-33.</span></a><span> </span></p><blockquote><p><span>	</span><span>而通过加装电力电子设备来治理杂散电流则无需改变原有系统结构，且便于维护，成本可控。文献[13-14]通过沿线路设置升压电路供列车牵引电流回流；文献[15]则采用直流自耦变压器牵引供电系统改变牵引电流回流路径；二者均通过电力电子装置缩短等效供电距离的方法抑制杂散电流的泄漏，但由于隧道内安装空间有限，沿线路安装的电力电子设备体积也会受限。 </span></p></blockquote><h2 id='动模系统论文整理'><span>动模系统论文整理</span></h2><p><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcLVQABs3&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[26]Ibrahem Amr, Elrayyah Ali, Sozer Yilmaz, at al. DC Railway System Emulator for Stray Current and Touch Voltage Prediction[J]. IEEE Transactions on Industry Applications, 2017, 53(1): 439-446.</span></a><span> </span></p><blockquote><p><span>	</span><span>In dc rail transit systems, the running rails are usually used as conductors to carry the traction current. This arrangement is considered for economic purposes since it eliminates the need to install special current carrying conductors. However, a significant part of the return current could leak into the ground in parts of the system with poor insulation. The amount of leakage current depends mainly on the conductance of the return tracks compared to that of ground, the quality of the insulation between the tracks and the earth, and the train current, which in turn depends on the train operating conditions (accelerating, braking, etc.)</span>
+<span>​</span><span>	</span><span>While stray current does not normally affect the railway electric system,it can cause serious damage to the metallic structures located near the railway tracks by accelerating the corrosion process on them. For example, corrosion could reduce the lifetime of underground cables and pipelines located near the transit system. According to [3]–[5], the annual cost of corrosion caused by transit system stray currents to the U.S. economy is estimated to be about $500 million.</span>
+<span>​</span><span>	</span><span>Since the value of the running rail resistance could be as high as several tens of milliohms per kilometer, and since the train’s drawn currents could reach up to 1200 A, a significant voltage drop (60–100 V) on the running rail could be generated underneath the train. Therefore, railway systems may pose a seriously hazardous situation for human lives’ as the touchvoltage increases when the train current becomes very high. Further, since the stray current leaks throughout the rail lines, the peak of the touch voltage usually occurs at the train location.</span>
+<span>​</span><span>	</span><span>Many methods have been developed to measure and control both the stray current and the touch voltage; however, it is very costly, difficult, and impractical to test these methods on an actual railway system. A leakage current control technique is proposed in [1] to limit the stray current and touch voltage by controlling the drive. Similar approach but different control strategies are proposed by other authors. The sensor is placed between the return path and the earth ground to determine the leakage current. The control algorithm operates to limit the leakage current within the limits. Here, it is very difficult to test the control algorithm and see its effectiveness on the real system. It is not easy to get into the field to do these tests. It requires taking the units out of the service for the safety of the passengers which is also very expensive to run the system for testing the sensors. That is why it is desired to test the operation of the controller with the emulator. With the emulator it would be possible to change the impedances and see the response of the controller accordingly.</span>
+<span>​</span><span>	</span><span>Therefore, there is a need for a low cost yet effective simulation test bed that would emulate the behavior of dc railway systems. This is especially so because it is always more expedient and cost effective to first investigate the behavior of the proposed methodologies using low-cost experimental setups prior to their implementation on an actual system.</span></p><p><span>	</span><span>在直流轨道交通系统中，运行轨道通常被用作承载牵引电流的导体。这种设计是出于经济考虑，因为它避免了安装专门的电流承载导体的需求。然而，在绝缘不良的系统部分，相当一部分回流电流可能会泄漏到地面。泄漏电流的量主要取决于回流轨道与地面的电导率之比、轨道与地面之间绝缘的质量以及列车电流，而列车电流又取决于列车的运行状态（加速、制动等）。</span>
+<span>​</span><span>	</span><span>虽然杂散电流通常不会影响铁路电气系统，但它会加速附近金属结构的腐蚀过程，从而对这些结构造成严重损害。例如，腐蚀可能会缩短位于轨道交通系统附近的地下电缆和管道的使用寿命。根据[3]–[5]的估计，由轨道交通系统杂散电流引起的腐蚀对美国经济造成的年度损失约为5亿美元。</span>
+<span>​</span><span>	</span><span>由于运行轨道的电阻值可能高达每公里几十毫欧，且列车牵引电流可达1200安培，因此在列车下方的运行轨道上可能会产生显著的电压降（60–100伏）。因此，当列车电流非常高时，铁路系统可能会对人身安全构成严重威胁，因为接触电压会随之增加。此外，由于杂散电流在整个轨道线路上泄漏，接触电压的峰值通常出现在列车所在位置。</span>
+<span>​</span><span>	</span><span>尽管已经开发了许多方法来测量和控制杂散电流及接触电压，但在实际铁路系统上测试这些方法成本高昂、难度大且不切实际。文献[1]提出了一种通过控制驱动器来限制杂散电流和接触电压的泄漏电流控制技术。其他作者也提出了类似的方法，但采用了不同的控制策略。传感器被放置在回流路径与地之间，用于检测泄漏电流。控制算法的作用是将泄漏电流限制在安全范围内。然而，在真实系统上测试控制算法并验证其有效性非常困难。</span><font color=red><span>进行这些测试不仅难以实施，还需要为了乘客安全而暂停部分系统的运行，这也会带来高昂的测试成本。因此，使用仿真器测试控制器的操作是更为理想的选择。</span></font><span>通过仿真器，可以改变阻抗并观察控制器的响应。</span>
+<span>​</span><span>	</span><span>因此，需要一种低成本且有效的仿真测试平台来模拟直流铁路系统的行为。这尤其重要，因为在将新方法应用于实际系统之前，首先通过低成本实验装置研究其行为总是更为便捷和经济高效的做法。</span></p></blockquote><center class="half">
+  <img src="https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcLVQAPs5&sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT" style="zoom:40%;" />
+  <p></p>
+  <font color=blue size=3>fig.1 Impedance model of the railway system using the variable impedance(A. Ibrahem)</font>
+</center>
+<center class="half">
+  <img src="https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcLVQAQsm&sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT" style="zoom:20%;" />
+  <img src="https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcLVQARsn&sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT" style="zoom:20%;" /><p></p>
+  <font color=blue size=3>fig.2 Variable High-Resistance Emulation Circuit(VHR-EC) and VLR-EC(A. Ibrahem)</font>
+</center><p>&nbsp;</p><p><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL-QABsf&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[19]杨晓峰,薛皓,郑琼林. 基于双向可变电阻模块的杂散电流与轨道电位动态模拟系统[J]. 电工技术学报, 2019, 34: 2793-2805.</span></a><span> </span></p><blockquote><p><span>	</span><span>随着我国城市化进程的推进，轨道交通因为运力大、速度快、污染小以及安全性高等特点，近年来得到大力发展，其直流牵引系统中存在的杂散电流与轨道电位引起的安全问题受到广泛关注。图1为轨道交通直流牵引系统中杂散电流的产生机理示意图，出于经济运行的考虑，走行轨不仅用于列车运行，同时还作为列车牵引电流的回流轨。由于走行轨与大地之间不可能完全绝缘，一部分牵引电流泄漏进入大地，并沿着土壤或埋地金属管线流动，最后返回到走行轨和牵引变电站负极，这部分电流称为杂散电流，也称之为迷流。杂散电流会导致走行轨和牵引系统附近的金属结构遭到严重的电化学腐蚀，使用寿命大大缩短；长时间的腐蚀将导致管线破损，甚至引发火灾和爆炸事故。同时，由于走行轨纵向电阻的存在，牵引电流会在走行轨上产生几十伏甚至上百伏的电势差，称之为轨道电位。由于轨道电位的最大值出现在列车所在位置处，所以会对人体安全产生潜在危害。</span></p></blockquote><center class="half">
+  <img src="https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcLVQAJs-&sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT" style="zoom:25%;" />
+  <img src="https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcLVQALs9&sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT" style="zoom:23%;" />
+  <p></p>
+  <img src="https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcLVQAMs6&sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT" style="zoom:37%;" /><p></p>
+  <font color=blue size=3>图1 动模系统结构（薛皓）</font>
+</center><center class="half">
+  <img src="https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcLVQACs0&sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT" style="zoom:30%;" />
+  <img src="https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcLVQAKs8&sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT" style="zoom:30%;" /><p></p>
+  <font color=blue size=3>图2 轨道电阻与过渡电阻模块（薛皓）</font>
+</center><p><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcMAAACsm&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[17]王慧康,杨晓峰,倪梦涵,等. 轨道电位与杂散电流动模实验平台[J]. 电工技术学报, 2020, 35: 3609-3618.</span></a><span> </span></p><blockquote><p><span>	</span><span>直流牵引供电系统采用的轨道回流方式不可避免地造成轨道电位以及杂散电流问题。由于轨道自身存在电阻率，轨道回流电流会在轨道上产生几十伏甚至上百伏的轨道电位；且轨道对地之间并非完全绝缘，地铁列车牵引电流一部分会通过轨道对地过渡电阻流入地下，并沿着埋地金属返回到轨道，最终流入牵引变电所负极，这部分电流被称为杂散电流[1]。杂散电流会引起地下金属管线、隧道结构钢筋发生电化学腐蚀，进而导致自来水、天然气、石油的泄露并对结构钢筋造成破坏，产生严重安全隐患。直流牵引供电系统牵引所负极接地方式通常为悬浮接地或直接接地两种，广泛采用的悬浮接地直流牵引供电系统虽然能降低杂散电流，但在牵引所位置产生与列车位置电压大小相同的轨道电位，一旦超过安全阈值对牵引所设备接地与人员安全造成威胁[2]，过电压保护装置启动牵引所负极直接接地；直接接地虽然能将牵引所电位减小为零，但会造成更多的杂散电流和列车位置更高的轨道电位[3]，因此实际系统运行存在不同接地方式的频繁切换。国内外学者关于轨道电位与杂散电流的主要研究包括：①考虑对地的多层结构轨道电位与杂散电流模型和理论分布，难以测量各层金属间过渡参数，且没有考虑牵引所不同接地方式切换，参数来源不准确[4-10]；②用于模拟轨道电位与杂散电流定值电阻系统无法反映在列车运动情况下的轨道电位和杂散电流分布[11-12]；③用于解决城市轨道交通中的迷流和轨道电位等问题，提出了基于RSCC的直流自耦变压器牵引供电系统[13]；④直接接地单列车工况的轨道电位与杂散电流模拟的动态模拟系统，由于列车不同运行工况电流方向不同，难以实现双向电流的模拟[</span><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL9wAAsU&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>14</span></a><span> -15]，实际中牵引变电所一般在直接接地和悬浮接地中切换[16]，简单的动态模拟系统难以模拟直流牵引供电系统采用的多接地方式切换。</span></p></blockquote><center class="half">
+  <img src="https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcLVQAFsz&sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT" style="zoom:25%;" />
+    <img src="https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcLVQAEsy&sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT" style="zoom:25%;" /><p></p>
+  <font color=blue size=3>图1 动模系统结构（王慧康）</font>
+</center><center class="half">
+  <img src=https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcLVQACs0&sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT" style="zoom:30%;" />
+  <img src="https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcLVQADs1&sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT" style="zoom:30%;" /><p></p>
+  <font color=blue size=3>图2 轨道电阻与过渡电阻模块（王慧康）</font>
+</center><p><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL%2bAABsa&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[20]徐杰,杨晓峰,王慧康,等. 一种多区段地铁轨道电位动态模拟系统[J]. 北京交通大学学报, 2020, 44: 57-65.</span></a><span> </span></p><blockquote><p><span>	</span><span>随着城市化进程加快，以地铁为代表的城市轨道交通以其运量大、安全可靠、快速舒适等优点，成为解决大中城市交通拥堵的首选方案．地铁普遍采用以钢轨回流的直流牵引供电系统，由于钢轨具有内阻，且钢轨与大地之间并非完全绝缘，牵引电流通过钢轨回流时，将在钢轨上产生轨道电位，同时部分牵引电流泄漏到大地中，形成杂散电流（也称之为“迷流”）．杂散电流会加速钢轨近的金属物体（如管道、电缆等）的电腐蚀，减少位于轨道附近的地下电缆和管道的寿命．同时，过高的轨道电位也会危及乘客安全，给轨道交通的正常运营带来严重风险[8-9]]．国内外学者围绕轨道电位与杂散电流问题开展了大量研究，先后提出一系列治理措施：提高供电电压等级、增大轨道对地电阻、减小轨道回流电阻、减小牵引变电所之间的距离、建立专用杂散电流收集网、阴极保护法等[10-12]]．这些方法一定程度上减小了轨道电位和杂散电流，但随着时间的推移，治理效果往往有限．为此，文献[13-14]在传统的直流牵引供电系统基础上多点分布接入电力电子补偿装置来实现杂散电流的分段动态治理，为解决轨道电位与杂散电流问题提供新思路．</span><font color=red><span>然而由于上述新方法在地铁现场开展实验验证协调难度大，亟须一种多区段硬件实验台模拟直流牵引供电系统的电气行为，为相关防治措施进行前期实验评估提供硬件试验平台．</span></font><span>文献</span><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL-QABsf&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[15]</span></a><span> 提出了双向可控电阻，实现了列车多工况下的轨道电位动态模拟，但是双向可控电阻拓扑复杂，输出阻值与电流存在耦合，控制精度较低．同时，这些方案仅适用于直接接地方式的直流牵引供电系统，与我国直流牵引供电系统普遍采用悬浮接地的实际情况不符．</span></p></blockquote><center class="half">
+  <img src="https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcLVQANs7&sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT" style="zoom:80%;" />
+  <img src="https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcLVQANs7&sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT" style="zoom:50%;" /><p></p>
+  <font color=blue size=3>图1 CRM模块与MRDPE（徐杰）</font>
+</center><p><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL-gAEsZ&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[21]王双慧,杨晓峰,王慧康,等. 考虑列车运行工况的钢轨电位硬件动态模拟平台[J]. 都市快轨交通, 2022, 35: 8-16.</span></a><span> </span></p><blockquote><p><span>	</span><span>城市轨道交通具有运力大、速度快、节能环保、不受气候影响等优点，近年来获得快速发展。截至2020年，我国城市轨道交通运营线路总里程达7978km[1]。城市轨道交通广泛采用直流牵引供电系统，牵引所通过接触网(或第三轨)向列车供电，并通过走行轨回流[2]。数千安培的列车电流流经每千米数十毫欧的走行轨会产生钢轨电位问题，过高的钢轨电位会危及人员及设备安全[3]。走行轨与大地之间并非完全绝缘，部分电流会泄漏至周边介质或大地中，形成杂散电流[4-5]。杂散电流容易导致钢筋混凝土结构及其他埋地金属结构的腐蚀，极端情况下会严重损坏其结构，减少使用寿命[6-8]。常见的钢轨电位与杂散电流治理措施包括：降低走行轨电阻、增强走行轨-大地间绝缘、提高供电系统电压等级、缩短牵引所间距、采用杂散电流收集网等[9-13]。但受环境因素的影响，上述措施随着时间推移逐渐恶化，依然存在杂散电流泄漏现象[14]。</span><font color=red><span>一些研究者提出利用电力电子技术实现对杂散电流的治理[15-18]，为杂散电流的治理提供了新思路。然而，上述治理措施直接用在现场，开展实验的协调难度大。</span></font><span>钢轨电位硬件动态模拟平台(rail potential hardware dynamic emulator，RPHDE)，能突破时空约束，再现钢轨电位的动态分布规律，为硬件治理措施的采用提供物理验证平台。王慧康等提出了一种电力电子的硬件动模方法</span><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcMAAACsm&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[19]</span></a><span> ，但其可变电阻模块仅能模拟列车单一运行工况下的钢轨电位。为此，杨晓峰等研究了一种改进的可变电阻模块</span><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL-QABsf&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[20]</span></a><span>以适应不同列车运行工况，但拓扑相对复杂。而徐杰等提出了一种简化拓扑</span><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL%2bAABsa&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[21]</span></a><span> ，采用固定电阻模拟走行轨-大地的过渡电阻，但未考虑列车运行工况影响。</span></p></blockquote><center class="half">
+  <img src="https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcLVQAIs%2b&sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT" style="zoom:25%;" />
+  <p></p>
+  <font color=blue size=3>图1 动模系统结构（王双慧）</font>
+</center><center class="half">
+  <img src="https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcLVQAHsx&sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT" style="zoom:20%;" />
+  <img src="https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcLVQAGsw&sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT" style="zoom:20%;" /><p></p>
+  <font color=blue size=3>图2 轨道电阻与过渡电阻模块（王双慧）</font>
+</center><p><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL-gADse&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[18]杨晓峰,王慧康,郑琼林. 直流牵引供电系统中有限边界边缘效应对轨道电位的影响[J]. 北京交通大学学报, 2020, 44: 1-11.</span></a><span> </span></p><blockquote><p><span>	</span><span>现有轨道电位分布模型通常忽略了供电回路区间以外的轨道及其对地过渡电阻带来的影响，但这无疑造成计算结果偏离实际情况．为解决上述问题，在分析有限长度轨道的边缘效应基础上，建立了整条线路轨道电位的分布数学模型，揭示了考虑有限边界边缘效应的地铁轨道电位分布规律．广州地铁８号线实测结果表明：考虑有限边界边缘效应的数学模型不仅能反映列车位置与牵引所处轨道电位变化情况，也能再现列车不同运行工况下沿轨道任意点的轨道电位变化规律，因此在轨道电位危害预测领域具有良好的应用前景．</span></p><p><span>	</span><span>地铁直流牵引供电系统中的列车电流通常通过轨道向牵引所回流，由于回流轨对地存在电位差，以及轨道对地不完全绝缘将造成一部分电流不可避免泄露到大地中，轨道对地的电位差即为轨道电位，这部分泄露电流称为杂散电流．过高的轨道电位会危及牵引所人员及设备安全，而直流牵引供电系统一般采用悬浮接地方式，牵引所的电位通常亦不为零．牵引所处的轨道电位一旦超过相关标准，将导致过电压保护装置动作，使整个系统直接接地，进而造成更多的杂散电流泄露，最大可达数百安培．OPVD长期闭锁将导致埋地金属管线与结构钢筋产生电化学腐蚀，同时OPVD与电压型框架保护装置的匹配一旦出现问题，将造成直流牵引供电系统大面积停电，影响地铁正常运营．针对轨道纵向电阻、轨道对地过渡电阻、直流牵引供电系统接地方式、直流牵引供电距离、列车运行工况等轨道电位影响因素，当前采取的改善措施主要包括了增大钢轨截面及钢轨对地绝缘、采用悬浮接地的直流牵引供电系统、减少供电距离、提高供电电压等级，并采用能量吸收装置减少电流跨区间传输等．尽管地铁建设初期已考虑上述因素，但实际线路的轨道电位问题依然严峻。</span></p></blockquote><h2 id='综述'><span>综述</span></h2><p><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL9wAEsQ&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[2]Yang Xiaofeng, Wang Miao, Zheng Trillion Q., at al. Modelling and Simulation of Stray Current in Urban Rail Transit—A Review[J]. Urban Rail Transit, 2024, 10(3): 189-99.</span></a></p><blockquote><p><span>	</span><span>With the rapid development of urban rail transit, the issue of stray current due to incomplete insulation between the rail and the earth is attracting increasing attention. Stray current seriously affects the safe operation of urban rail transit, pipelines and power grids, and pose challenges to the development of urban energy security. However, there are significant differences among the various methods for the analysis and verification of stray currents, and existing research works thus lack a mature theoretical framework. To address this, this paper presents an in-depth review on the study of stray current including the mechanism, technical standards, modelling, simulation and mitigation technologies. Firstly, the principle and standards of stray current are introduced from multiple perspectives (i.e. metro side, pipeline side and grid side). Then, the typical modelling and simulation of stray current are summarized and compared in detail. The representative stray current mitigation measures, together with the stray current hardware simulation technologies, are also discussed. In conclusion, this paper provides a comprehensive overview of key technologies involved in the modelling and simulation of stray current, and highlights the valuable research direction in stray current mitigation.（随着城市轨道交通的快速发展，因轨道与大地不完全绝缘产生的杂散电流问题日益受到关注。杂散电流严重影响城市轨道交通、地下管网及电网的安全运行，对城市能源安全发展构成挑战。然而，目前杂散电流的分析与验证方法差异显著，相关研究尚未形成成熟的理论体系。为此，本文从机理、技术标准、建模、仿真与防护技术等方面对杂散电流研究进行系统性综述。首先，从轨道交通侧、管网侧及电网侧多维度阐述了杂散电流的作用原理与标准规范；其次，对典型的杂散电流建模与仿真方法进行归纳与对比分析；重点探讨了主流的杂散电流防护措施及其硬件仿真技术。最后，系统总结了杂散电流建模与仿真涉及的关键技术，并展望了未来杂散电流防护领域的重要研究方向。)</span></p></blockquote><p><span> </span><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL%2bQAEse&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[4]Bhagat Sahil, 杨晓峰, 王淼, at al. 城市轨道交通杂散电流治理的综述与评估（英文）[J]. 电工技术学报, 2021, 36(23): 4851-63.</span></a></p><blockquote><p><span>	</span><span>杂散电流会造成电气化交通系统附近金属结构腐蚀，该现象在普遍采用直流牵引供电的城市轨道交通中尤为突出。该文分别对城市轨道交通新建线路和运营阶段的现有线路的杂散电流治理和防护措施进行讨论。对设计阶段的新建线路而言，可采用包括优化牵引变电所位置、减小轨道纵向电阻、在道床中安装杂散电流收集系统等措施。对处于运营阶段的现有线路而言，除了采取在走行轨上并联线缆或走行轨间焊接均流线等以增大回流路径截面积措施外，通过电力电子的静止变换器（如负阻变换器等）控制回流路径杂散电流的方法也是极具潜力的治理措施；上述单元可以部署在特定点，以实现对轨道电位过高或出现初期腐蚀位置处的定点治理。</span></p></blockquote><h2 id='轨道交通的背景'><span>轨道交通的背景</span></h2><p><a href='https://mail.bjtu.edu.cn/coremail/common/nf/data.jsp?mid=2%3a1tbiAgAKBmfeyJcL%2bAAAsb&amp;sid=CAnrKFpprGjIZsYFhLJCYHbfbIPlsTFT'><span>[28]Rahman Farah Asyikin Abd, Kadir Mohd Zainal Abidin Ab, Osman Miszaina, at al. Review of the AC Overhead Wires, the DC Third Rail and the DC Fourth Rail Transit Lines: Issues and Challenges[J]. IEEE Access, 2020, 8: 213277-213295.</span></a><span> </span></p><blockquote><p><span>    Transit is regard as a sound public transportation system and was born as a reliever to ease the pressure on city streets. This pressure arose as a result of the excessive sprawling of urban areas that led to the escalating population of the urban dwellers and in due course transformed into an automobile dominated area. This excessive dependency on autos caused the sheer number of vehicles on city roads each day to skyrocket just carrying a single person each on their daily commute to work. When added to the delivery lorries and vans, service vehicles, and buses and taxis out there driving each day, this easily leads to a massive gridlock. This contributes to rising tensions, more fuel use, higher amounts of air pollution, and slower commuting times. Thus, as voiced out by the former Secretary-General of the United Nation back in 2012, he raised the urgency for developing more sustainable urban transit systems that can address these issues. Sustainable urban transit systems have to be able to coordinate seamless movement within and between cities, which in turn is essential for urban functionality and prosperity. Metro, bus rapid transit (BRT) and light rail transit (LRT) are presumed to be such systems.</span>
+<span>​   Metro, mass rapid transit (MRT), underground, subway or rapid rail; similar systems but different names depending on what country you are in, is a railway usually in an urban area with high passenger capacities and frequent travel. Furthermore, as it usually a full grade separation from other trafic be it from roads or rail, thereupon it is acknowledged for its speed and decreased journey time. For example, getting from Leicester Square to Convent Garden by London Underground takes only 20 seconds, one-third of the equivalent taxi travel. Moreover, the London Underground may be the oldest urban rapid transit system in the world but it is certainly not the only one of its kind. Asyet there are almost 180 rapid transit systems in 178 cities from 56 countries. Nevertheless, the London Underground has made it to the list of the ten largest rapid transit systems in the world. </span>
+<span>​   The rapid transit which is also known as heavy rail so as to set it off from light rail transit, requires heavier investment and is implemented as the preferable option for large cities where demandjusti es the high capital cost. A preference only arises when one mode offers a higher quality service such as fewer transfers, higher frequency and reduced time of travel. However, in cases of medium-size urban areas, this investment may have limited practical value, to the extent that the public sector may end up with a long-term debt that can affect investment in more pressing policy areas. As a consequence, a more economica lmode of transit is preferable such as rapid bus or light rail transit.</span>
+<span>​   Rapid bus and light rail transit are more or less the same whencompared with each other. Both transit systems operate on dedicated roadways or railways. While rapid bus transit construction may cost much less than a light rail transit, but in a city where space is at a premium it would be unlikely that the city administration would gave over entire chunks of street to one category of bus. Light rail transit on the other hand also moves at street level and has an exclusive right-of-way. It emerged as a reinvigoration or an upgraded version of a tram or streetcar. It has a higher capacity than a single tramcar as it operates with multiple unit trains. Another point is its speed ranges from a slightly improved tram system to a system that is essentially rapid transit but with some level crossings. Nonetheless the cost of building and operating light rail transit is considerably higher than the cost of rapid bus transit but much lower than the rapid transit. Yet still it is wise to reconsider this option as it offers lower local air pollution impact and possibly smoother rides for urban travellers as shown in Table 1.</span></p><p><span>	</span><span>轨道交通被视为一种高效的公共交通系统，其诞生是为了缓解城市街道的压力。这种压力源于城市区域的过度扩张，导致城市居民人口激增，并逐渐转变为以汽车为主导的区域。这种对汽车的过度依赖使得每天城市道路上的车辆数量激增，而这些车辆通常只载有一人用于日常通勤。再加上每天行驶的送货卡车、货车、服务车辆、公共汽车和出租车，很容易导致大规模的交通拥堵。这不仅加剧了人们的紧张情绪，还增加了燃料消耗、空气污染以及通勤时间。因此，正如联合国前秘书长在2012年所强调的，他呼吁开发更可持续的城市交通系统以解决这些问题。可持续的城市交通系统必须能够协调城市内部和城市之间的无缝连接，这对城市的功能性和繁荣至关重要。地铁、快速公交系统（BRT）和轻轨交通（LRT）被认为是这样的系统。</span></p><p><span>	</span><span>地铁（Mass Rapid Transit, MRT）、地下铁路、地铁或快速铁路；虽然名称因国家而异，但都是指通常位于城市区域的高容量、高频次的铁路系统。此外，由于它通常与其他交通（无论是道路还是铁路）完全隔离，因此以其速度和缩短的旅行时间而闻名。例如，乘坐伦敦地铁从莱斯特广场到考文特花园只需20秒，相当于出租车行驶时间的三分之一。此外，伦敦地铁可能是世界上最古老的城市快速交通系统，但它绝不是唯一一个。目前，全球56个国家的178个城市中已有近180个快速交通系统。尽管如此，伦敦地铁仍跻身世界十大快速交通系统之列。</span></p><p><span>	</span><span>快速交通系统，也被称为重轨交通，以区别于轻轨交通，需要更多的投资，通常作为大城市的首选方案，因为其高需求可以证明高资本成本的合理性。这种偏好只有在某种交通方式提供更高质量服务时才会出现，例如更少的换乘、更高的频率和更短的旅行时间。然而，在中等规模的城市区域，这种投资可能具有有限的实用价值，甚至可能导致公共部门陷入长期债务，从而影响对更紧迫政策领域的投资。因此，更经济的交通方式（如快速公交或轻轨交通）更为可取。</span></p><p><span>	</span><span>快速公交和轻轨交通在某种程度上是相似的。两种交通系统都在专用道路或轨道上运行。虽然快速公交的建设成本可能远低于轻轨交通，但在空间有限的城市中，市政府不太可能将整条街道完全划归为某类公交专用道。另一方面，轻轨交通也在街道层面上运行，并拥有专属的路权。它是传统有轨电车或街车的升级版，具有更高的容量，因为它以多节车厢的形式运行。此外，其速度范围从略有改进的有轨电车系统到本质上类似于快速交通但带有一些平交道的系统。尽管如此，轻轨交通的建设和运营成本明显高于快速公交，但远低于快速交通系统。然而，如表1所示，重新考虑轻轨交通是明智的，因为它对当地空气污染的影响较小，并可能为城市旅客提供更平稳的乘坐体验。</span></p><figure class='table-figure'><table><thead><tr><th style='text-align:center;' ><span>Item</span></th><th style='text-align:center;' ><span>Rapid transit</span></th><th style='text-align:center;' ><span>Light rail</span></th><th style='text-align:center;' ><span>BRT</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>Running ways</span></td><td style='text-align:center;' ><span>Rail Tracks</span></td><td style='text-align:center;' ><span>Rail Tracks</span></td><td style='text-align:center;' ><span>Roadway</span></td></tr><tr><td style='text-align:center;' ><span>Required roadway space</span></td><td style='text-align:center;' ><span>对现有道路影响很小</span><font color=#ff00ff><span>★★★★★</span></font></td><td style='text-align:center;' ><span>两车道(5~8m)</span><font color=#ff00ff><span>★★★</span></font></td><td style='text-align:center;' ><span>四车道(7~15m)</span><font color=#ff00ff><span>★</span></font></td></tr><tr><td style='text-align:center;' ><span>Type of right of way</span></td><td style='text-align:center;' ><span>地下/高架/地面</span><font color=#ff00ff><span>★★★★★</span></font></td><td style='text-align:center;' ><span>通常地面，部分高架/地下</span><font color=#ff00ff><span>★★★</span></font></td><td style='text-align:center;' ><span>通常地面，部分高架/地下</span><font color=#ff00ff><span>★★★</span></font></td></tr><tr><td style='text-align:center;' ><span>Segregation from the rest of the traffic(与其它交通隔离)</span></td><td style='text-align:center;' ><span>完全隔离</span><font color=#ff00ff><span>★★★★★</span></font></td><td style='text-align:center;' ><span>通常是纵向隔离（平面交叉路口），（部分采用完全隔离）</span><font color=#ff00ff><span>★★★★</span></font></td><td style='text-align:center;' ><span>通常是纵向隔离（平面交叉路口），（部分采用完全隔离）</span><font color=#ff00ff><span>★★★★</span></font></td></tr><tr><td style='text-align:center;' ><span>Type of vehicle</span></td><td style='text-align:center;' ><span>Trains (multi-car)</span></td><td style='text-align:center;' ><span>Trains (single to three cars)</span></td><td style='text-align:center;' ><span>Buses</span></td></tr><tr><td style='text-align:center;' ><span>Type of propulsion</span></td><td style='text-align:center;' ><span>Electric</span><font color=#ff00ff><span>★★★★★</span></font></td><td style='text-align:center;' ><span>Electric (few applications are     diesel)</span><font color=#ff00ff><span>★★★★</span></font></td><td style='text-align:center;' ><span>Usually internal combustion engine or hybrid transmission or electric trolleybuses(通常是内燃机或混合动力传动系统或电动无轨电车)</span><font color=#ff00ff><span>★★</span></font></td></tr><tr><td style='text-align:center;' ><span>Traffic impacts during     operation</span></td><td style='text-align:center;' ><span>Reduced  congestion (does not interfere with surface travel)</span><font color=#ff00ff><span>★★★★★</span></font></td><td style='text-align:center;' ><span>Variable (takes some space from     traffic)</span><font color=#ff00ff><span>★★★★</span></font></td><td style='text-align:center;' ><span>Variable(takes space, rduces traffic interference by buses)</span><font color=#ff00ff><span>★★★</span></font></td></tr><tr><td style='text-align:center;' ><span>Airpollution</span></td><td style='text-align:center;' ><span>No tailpipe emissions, power generation pollutants dependent on energy source and technologies used</span><font color=#ff00ff><font color=#ff00ff><span>★★★★★</span></font></font></td><td style='text-align:center;' ><span>No tailpipe emissions, power generation pollutants dependent on energy source and technologies used</span><font color=#ff00ff><span>★★★★★</span></font></td><td style='text-align:center;' ><span>Tailpipe emissions for internal combustion engine, depends on the engine, fuel and emission control technology</span><font color=#ff00ff><span>★★★</span></font></td></tr><tr><td style='text-align:center;' ><span>Greenhouse gas emissions</span></td><td style='text-align:center;' ><span>68 to 38 grams per passenger-kilometre</span><font color=#ff00ff><span>★★★★★</span></font></td><td style='text-align:center;' ><span>100 to 38 grams per passenger-kilometre</span><font color=#ff00ff><span>★★★★</span></font></td><td style='text-align:center;' ><span>204 to 28 grams per passenger-kilometre</span><font color=#ff00ff><span>★★</span></font></td></tr><tr><td style='text-align:center;' ><span>Passenger experience</span></td><td style='text-align:center;' ><span>Smooth ride, high comfort(depending on occupancy)</span><font color=#ff00ff><span>★★★★★</span></font></td><td style='text-align:center;' ><span>Smooth ride, high comfort(depending on occupancy)</span><font color=#ff00ff><span>★★★★★</span></font></td><td style='text-align:center;' ><span>Irregular  ride (sudden acceleration and braking), medium comfort     (depending on occupancy)</span><font color=#ff00ff><span>★★★</span></font></td></tr><tr><td style='text-align:center;' ><span>Project     investment     (million     US$/km)</span></td><td style='text-align:center;' ><span>60.7 to 106.3</span><font color=#ff00ff><span>★</span></font></td><td style='text-align:center;' ><span>45.5 to 75.9</span><font color=#ff00ff><span>★★★</span></font></td><td style='text-align:center;' ><span>6.1 to 8.3</span><font color=#ff00ff><span>★★★★★</span></font></td></tr></tbody></table></figure></blockquote><blockquote><p><span>     In short, after a deliberate presentation taking into account each traction system its gains and losses, generally third rail at a DCvoltage is the favourable contact system and supplied voltage for an urban metro. Table 4 lists out other advantages and disadvantages between these two electricity supplies, while Table 5 lists out the preference contact system corresponding to practical transit systems. Also Table 6 points out the pros and cons of selecting either an overhead wire or a third rail contact system for many metro transits.</span>
+<span>​</span><span>	</span><span>简而言之，在综合考虑了每种牵引系统的优缺点之后，通常直流电压的第三轨是城市地铁的首选接触系统和供电电压。表4列出了这两种供电方式的其他优缺点，而表5则列出了与实际交通系统相对应的首选接触系统。此外，表6指出了为许多地铁交通选择架空线或第三轨接触系统的利弊。</span></p><figure class='table-figure'><table><thead><tr><th style='text-align:center;' ><span>TRACTION ELECTRIFICATION TYPE</span></th><th><span>Advantages</span></th><th><span>Disadvantages</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>DC Voltage</span></td><td><span>a. Ease on rapid acceleration and braking of dc motor</span><br><span>b. Less energy consumption. The equipment is less costly, lighter and more efficient.</span><br><span>c. Lighter trains allow to carry more passengers on-board</span><br><span>d. It causes no electrical interference with nearby     communication lines</span><br><span>e.  requires less complex traction control system</span></td><td><span>a. frequent interval substations require constant monitoring as each substation includes transformers and rectifiers but they minimise the generation of stray currents as the vehicle moves away from the power source(substation)</span><br><span>b. DC systems are limited to relatively low voltages and this can limit the  size and speed of trains</span><br><span>c. Expensive substations are required at frequent intervals as the railway authority has to provide its own high voltage AC distribution network linking to wayside substations as well its own rectifier plant.</span><br><span>d. The overhead wire or third rail must be relatively large and heavy</span><br><span>e. Voltage goes on decreasing with increase in length</span><br><span>f. Requires thick cables and has significant resistive losses</span></td></tr><tr><td style='text-align:center;' ><span>ac voltage</span></td><td><span>a.Quick availability and easily stepped up or down (without rectification)</span><br><span>b. Fewer substations are required, but allows operation with longer trains</span><br><span>c. Easy control of AC motors</span><br><span>d. Lighter overhead current supply wire can be used</span><br><span>e. reduced weight of support structure</span><br><span>f. reduced capital cost of electrification</span><br><span>g. improved efficiency reduction of voltage drop over distance</span><br><span>h. Using energy from brakes more effectively lower energy loss and more precise wheel adhesion because of more precise control technology 49], thus brake maintenance is reduced [57]</span></td><td><span>a. Significant cost of electrification</span><br><span>b. increased maintenance cost of lines</span><br><span>c. overhead wire further limits clearance in tunnels</span><br><span>d. Upgrading needs additional cost especially in case there are bridges and tunnels</span><br><span>e. railwaytraction requires immune power with no cuts</span><br><span>f. potential interference with electromagnetic and magnetic fields on properties and activities close to line</span><br><span>g. On-board transformer imposes significant weight on the ac-powered rolling stock</span><br><span>h. AC electrification must deal with inductive reactance which increases proportionally with frequency thus needs a higher voltage on the overhead wire system</span></td></tr></tbody></table></figure></blockquote><p>&nbsp;</p></div></div>
+</body>
+</html>
