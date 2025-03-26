@@ -46,7 +46,7 @@ h6 { font-size: 1rem; }
 .md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
 a { cursor: pointer; }
 sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
-sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+sup.md-footnote a, sup.md-footnote a:hover { color: a748ac; text-transform: inherit; text-decoration: underline; }
 #write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
 figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
 figure > table { margin: 0px; }
@@ -316,7 +316,7 @@ mjx-container { break-inside: avoid; }
 /* Link */
 
 #write a {
-    text-decoration:none;
+    font-family: "Cantarell";
     /* font-family: "Cantarell"; */
 }
 
@@ -727,23 +727,6 @@ table td {
 
 .md-table-resize-popover {
     width: auto !important;
-}
-  /* 链接样式 */
-  /* 没有访问过的样式 */
-#write a:link{
-    color:#4870ac;
-  }
-  /* 访问过的样式 */
-#write a:visited{
-    color:#4870ac;
-  }
-  /* 鼠标悬停的样式 */
-#write a:hover{
-    color:#ac4859;
-  }
-  /* 鼠标激活(点击未松开)的样式 */
-#write a:active{
-  color:#a748ac;
 }
   
 /* Footnote */
