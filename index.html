@@ -10,7 +10,7 @@ h1, h2, h3, h4, h5 { white-space: pre-wrap; }
 body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
 iframe { margin: auto; }
 a.url { word-break: break-all; }
-#write a:hover { outline: 0px; text-decoration: underline; color: #ff002a; }， a:active
+a:active, a:hover { outline: 0px; }
 .in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
 #write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
 #write.first-line-indent p { text-indent: 2em; }
@@ -44,7 +44,7 @@ h6 { font-size: 1rem; }
 .md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
 .hidden { display: none; }
 .md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
-a { cursor: pointer; text-decoration: none}
+a { cursor: pointer; }
 sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
 sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
 #write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
@@ -317,9 +317,10 @@ mjx-container { break-inside: avoid; }
 
 #write a {
     color: var(--primary-color);
+    text-decoration: none; 
     /* font-family: "Cantarell"; */
 }
-
+#write a:hover { outline: 0px; text-decoration: underline; color: #ff002a; }， a:active
 #write .md-p a,
 #write .md-heading a,
 [md-inline=url],
@@ -1146,10 +1147,10 @@ header,
 }
 
 
-</style><title>迷流文献总结web</title>
+</style><title>迷流文献总结</title>
 </head>
 <body class='typora-export os-windows'><div class='typora-export-content'>
-<div id='write'  class=''><p>&nbsp;</p><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n492"><a class="md-toc-inner" href="#迷流相关文献总览">迷流相关文献总览</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n494"><a class="md-toc-inner" href="#研究方向分类">研究方向分类</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n512"><a class="md-toc-inner" href="#城市轨道交通背景与治理措施必要性">城市轨道交通背景与治理措施必要性</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n571"><a class="md-toc-inner" href="#杂散电流的传统治理措施">杂散电流的传统治理措施</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n593"><a class="md-toc-inner" href="#杂散电流的电力电子治理措施">杂散电流的电力电子治理措施</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n606"><a class="md-toc-inner" href="#动模系统论文整理">动模系统论文整理</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n640"><a class="md-toc-inner" href="#综述">综述</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n647"><a class="md-toc-inner" href="#轨道交通的背景">轨道交通的背景</a></span></p></div><hr /><h1 id='迷流相关文献总览'><span>迷流相关文献总览</span></h1><p><a href="paper/Dynamic_Performance_Analysis_Optimization_and_Verification_of_DC_Auto-Transformer_System_With_Rail_Potential_and_Stray_Current_Emulator.pdf" target="_blank"><span>[1]Wang Miao, Yang Xiaofeng, Ni Menghan, at al. Dynamic Performance Analysis, Optimization, and Verification of DC Auto-Transformer System with Rail Potential and Stray Current Emulator[J]. IEEE Transactions on Transportation Electrification, 2022, 8(1): 480-91.</span></a>
+<div id='write'  class=''><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n3"><a class="md-toc-inner" href="#迷流相关文献总览">迷流相关文献总览</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n5"><a class="md-toc-inner" href="#研究方向分类">研究方向分类</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n23"><a class="md-toc-inner" href="#城市轨道交通背景与治理措施必要性">城市轨道交通背景与治理措施必要性</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n82"><a class="md-toc-inner" href="#杂散电流的传统治理措施">杂散电流的传统治理措施</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n104"><a class="md-toc-inner" href="#杂散电流的电力电子治理措施">杂散电流的电力电子治理措施</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n117"><a class="md-toc-inner" href="#动模系统论文整理">动模系统论文整理</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n151"><a class="md-toc-inner" href="#综述">综述</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n158"><a class="md-toc-inner" href="#轨道交通的背景">轨道交通的背景</a></span></p></div><hr /><h1 id='迷流相关文献总览'><span>迷流相关文献总览</span></h1><p><a href="paper/Dynamic_Performance_Analysis_Optimization_and_Verification_of_DC_Auto-Transformer_System_With_Rail_Potential_and_Stray_Current_Emulator.pdf" target="_blank"><span>[1]Wang Miao, Yang Xiaofeng, Ni Menghan, at al. Dynamic Performance Analysis, Optimization, and Verification of DC Auto-Transformer System with Rail Potential and Stray Current Emulator[J]. IEEE Transactions on Transportation Electrification, 2022, 8(1): 480-91.</span></a>
 <a href="paper/Modelling and Simulation of Stray Current in Urban Rail.pdf" target="_blank"><span>[2]Yang Xiaofeng, Wang Miao, Zheng Trillion Q., at al. Modelling and Simulation of Stray Current in Urban Rail Transit—A Review[J]. Urban Rail Transit, 2024, 10(3): 189-99.</span></a>
 <a href="paper/城市轨道交通钢轨电位限制装置操作过电压抑制研究_兰慧峰.pdf" target="_blank"><span>[3]兰慧峰,孙建军,李国玉,等. 城市轨道交通钢轨电位限制装置操作过电压抑制研究[J]. 都市快轨交通, 2025, 38: 149-56.</span></a>
 <a href="paper/城市轨道交通杂散电流治理的综述与评估（英文）_Sahil Bhagat.pdf" target="_blank"><span>[4]Bhagat Sahil, 杨晓峰, 王淼, at al. 城市轨道交通杂散电流治理的综述与评估（英文）[J]. 电工技术学报, 2021, 36(23): 4851-63.</span></a>
